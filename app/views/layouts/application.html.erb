@@ -10,6 +10,26 @@
   </head>
 
   <body>
+    <header>
+    <div class="">
+      <% if user_signed_in? %>
+        <div>
+          Logged in as <strong><%= current_user.email %></strong>.
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+        </div>
+      <% else %>
+        <div>
+          <%= link_to "ログイン", new_user_session_path %>
+        </div>
+      <% end %>
+
+    </div>
+  </header>
+
+  <div>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
+  </div>
   </body>
 </html>
