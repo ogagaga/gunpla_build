@@ -19,7 +19,10 @@
         - else
           %div
             = link_to "ログイン", new_user_session_path
+
     %div
-      %p.notice= notice
-      %p.alert= alert
-      = yield
+      - if notice
+        %p.alert.alert-notice= notice
+      - if alert
+        %p.alert.alert-error= alert
+    = yield
