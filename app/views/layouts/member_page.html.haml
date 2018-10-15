@@ -19,17 +19,6 @@
         - else
           %div
             = link_to "ログイン(members)", new_member_session_path
-      %div
-        TODO:usersは開発中だけ表示しておく
-        - if user_signed_in?
-          %div
-            Logged in as
-            = succeed "." do
-              %strong= current_user.email
-            = link_to "ログアウト(users)", destroy_user_session_path, method: :delete
-        - else
-          %div
-            = link_to "ログイン(users)", new_user_session_path
 
     %div
       - if notice
@@ -37,3 +26,5 @@
       - if alert
         %p.alert.alert-error= alert
     = yield
+
+
