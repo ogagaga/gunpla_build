@@ -8,8 +8,12 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'cancancan'
 gem 'coffee-rails', '~> 4.2'
 gem 'devise'
+gem 'enumerize'
+gem 'faker'
 gem 'haml-rails'
 gem 'jbuilder', '~> 2.5'
+gem 'jquery-rails'
+gem 'kaminari'
 gem 'mysql2', '>= 0.4.4', '< 0.6.0'
 gem 'puma', '~> 3.11'
 gem 'rails', '~> 5.2.1'
@@ -30,7 +34,7 @@ end
 group :test do
   gem 'capybara-email'
   gem 'database_rewinder'
-  gem 'factory_girl_rails'
+  gem "factory_bot_rails"
   gem 'launchy'
   gem 'poltergeist'
   gem 'rspec-rails'
