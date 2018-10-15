@@ -1,5 +1,18 @@
 Rails.application.routes.draw do
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  root to: 'top#show'
+
   devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  devise_for :members, controllers: {
+    confirmations: 'members/confirmations',
+    registrations: 'members/registrations',
+    passwords:     'members/passwords',
+    sessions:      'members/sessions'
+  }
+
+  namespace :member_page, path: 'members' do
+    root 'dashboard#show'
+  end
+
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 end
