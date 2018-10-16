@@ -34,16 +34,17 @@ end
 group :test do
   gem 'capybara-email'
   gem 'database_rewinder'
-  gem "factory_bot_rails"
+  gem 'factory_bot_rails'
   gem 'launchy'
   gem 'poltergeist'
   gem 'rspec-rails'
 end
 
 group :development, :test do
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'pry-byebug'
   gem 'pry-doc'
   gem 'pry-rails'
   gem 'pry-stack_explorer'
+  gem 'rubocop', require: false
 end
