@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
     case resource
     when Member
       member_page_root_path
+    when User
+      rails_admin_path
     else
       raise "#{resource} should not be signed in."
     end
