@@ -1,0 +1,8 @@
+ja:
+  common:
+  devise:
+    sessions:
+      login: 'ログイン'
+      forgot_password: 'パスワードをお忘れですか？'
+
+

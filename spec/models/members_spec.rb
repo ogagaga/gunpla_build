@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Member, type: :model do
   describe 'バリデーション' do
-    let!(:member) { build(:member) }
+    let!(:member) { build(:alice) }
 
     it 'emailとパスワードどちらも値が設定されていれば、OK' do
       expect(member.valid?).to eq(true)
