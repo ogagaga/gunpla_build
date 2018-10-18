@@ -25,30 +25,45 @@ jobs:
       - checkout
 
       # Download and cache dependencies
-      - type: cache-restore
-        key: phantomjs-2.1.1
+      # - type: cache-restore
+      #   key: phantomjs-2.1.1
       - restore_cache:
           keys:
           - v1-dependencies-{{ checksum "Gemfile.lock" }}
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
+          - phantomjs-2.1.1
 
       # Install phantomjs
-      - run: sudo apt-get install -y fonts-migmix
-      - run: |
-          which phantomjs && exit
-          curl --location --silent https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2 | tar xj -C /tmp --strip-components=1
-          sudo mv /tmp/bin/phantomjs /usr/local/bin/phantomjs
+      # - run: sudo apt-get install -y fonts-migmix
+      # - run: |
+      #     which phantomjs && exit
+      #     curl --location --silent https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2 | tar xj -C /tmp --strip-components=1
+      #     sudo mv /tmp/bin/phantomjs /usr/local/bin/phantomjs
+
+      - run:
+          name: Install phantomjs
+          command: |
+            if ! [ $(which phantomjs) ]; then                
+            sudo curl --output /usr/local/bin/phantomjs https://s3.amazonaws.com/circle-downloads/phantomjs-2.1.1
+            fi
+
+            sudo chmod ugo+x /usr/local/bin/phantomjs
 
       - run:
           name: install dependencies
           command: |
             bundle install --jobs=4 --retry=3 --path vendor/bundle
 
-      - type: save_cache
-        key: phantomjs-2.1.1
-        paths:
-          - /usr/local/bin/phantomjs
+      # - type: save_cache
+      #   key: phantomjs-2.1.1
+      #   paths:
+      #     - /usr/local/bin/phantomjs
+
+      - save_cache:
+          key: v1-phantomjs-2.1.1
+          paths:
+            - /usr/local/bin/phantomjs
 
       - type: save_cache
         key: v1-dependencies-{{ checksum "Gemfile.lock" }}
