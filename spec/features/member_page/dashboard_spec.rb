@@ -13,7 +13,7 @@ describe '個人会員ダッシュボード' do
       expect(page).to have_css('.dashboardHeader__title' ,text: 'Dashboard')
     end
 
-    it '製作管理一覧が表示できる' do
+    it '製作管理一覧のリンクが表示できる' do
       expect(page).to have_css('.dashboardSection__appMain' ,text: '製作道具管理')
     end
   end
