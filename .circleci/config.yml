@@ -29,9 +29,9 @@ jobs:
         key: phantomjs-2.1.1
       - restore_cache:
         keys:
-        - v1-dependencies-{{ checksum "Gemfile.lock" }}
-        # fallback to using the latest cache if no exact match is found
-        - v1-dependencies-
+          - v1-dependencies-{{ checksum "Gemfile.lock" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
 
       # Install phantomjs
       - run: apt-get install -y fonts-migmix
