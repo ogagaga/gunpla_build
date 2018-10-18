@@ -8,6 +8,7 @@ describe '個人会員ダッシュボード' do
     end
 
     it '製作道具管理画面が表示できる' do
+      sleep 1
       within '.dashboardSection__appMain' do
         click_on '製作道具管理'
       end
