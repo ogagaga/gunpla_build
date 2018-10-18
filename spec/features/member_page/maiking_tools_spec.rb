@@ -8,7 +8,9 @@ describe '個人会員ダッシュボード' do
     end
 
     it '製作道具管理画面が表示できる' do
-      click_on '製作道具管理'
+      within '.dashboardSection__appMain' do
+        click_on '製作道具管理'
+      end
       expect(page).to have_css('.makingtoolsHeader__title' ,text: '製作道具管理')
     end
   end
