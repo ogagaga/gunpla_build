@@ -33,6 +33,11 @@ jobs:
           - phantomjs-2.1.1
 
       - run:
+          name: Install fonts
+          command: |
+            sudo apt-get install fonts-migmix
+
+      - run:
           name: Install phantomjs
           command: |
             if ! [ $(which phantomjs) ]; then
