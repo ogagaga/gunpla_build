@@ -14,7 +14,6 @@ jobs:
             TEST_DB_NAME: gunpla_build_test
             TEST_DB_USERNAME: 'root'
             TEST_DB_PASSWORD: ''
-
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
       # documented at https://circleci.com/docs/2.0/circleci-images/
@@ -31,6 +30,21 @@ jobs:
           - v1-dependencies-{{ checksum "Gemfile.lock" }}
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
+          - phantomjs-2.1.1
+
+      - run:
+          name: Install fonts
+          command: |
+            sudo apt-get install fonts-migmix
+
+      - run:
+          name: Install phantomjs
+          command: |
+            if ! [ $(which phantomjs) ]; then
+            sudo curl --output /usr/local/bin/phantomjs https://s3.amazonaws.com/circle-downloads/phantomjs-2.1.1
+            fi
+
+            sudo chmod ugo+x /usr/local/bin/phantomjs
 
       - run:
           name: install dependencies
@@ -38,9 +52,14 @@ jobs:
             bundle install --jobs=4 --retry=3 --path vendor/bundle
 
       - save_cache:
+          key: v1-phantomjs-2.1.1
           paths:
-            - ./vendor/bundle
-          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+            - /usr/local/bin/phantomjs
+
+      - type: save_cache
+        key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+        paths:
+          - ./vendor/bundle
 
       # Database setup
       - run: bundle exec rake db:create
@@ -58,6 +77,8 @@ jobs:
                             --out /tmp/test-results/rspec.xml \
                             --format progress \
                             $TEST_FILES
+
+      - run: bundle exec rubocop -D -R -c .rubocop.yml
 
       # collect reports
       - store_test_results:
