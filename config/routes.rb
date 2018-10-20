@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   namespace :member_page, path: 'members' do
     root 'dashboard#show'
-    resources :making_tools, only: %i(index)
+    resources :making_tools, only: %i(index new)
   end
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
