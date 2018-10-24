@@ -1,0 +1,10 @@
+= simple_form_for([:member_page, making_tool], html: {class: 'informationForm__form'}) do |f|
+  .informationForm__formBody
+    .informationForm__formSection
+      = f.input :name
+      = f.input :price
+      = f.input :affiliate_amazon_link
+      = f.file_field :image
+      = f.input :note
+      = f.collection_select :making_tool_category_id, MakingToolCategory.all, :id, :name
+      = f.button :submit, t('common.actions.register')

@@ -16,4 +16,3 @@ MakingToolCategory.create! name: 'スミ入れの道具'
 MakingToolCategory.create! name: '部分塗装の道具'
 MakingToolCategory.create! name: '改造に使う道具'
 MakingToolCategory.create! name: 'その他の道具'
-
