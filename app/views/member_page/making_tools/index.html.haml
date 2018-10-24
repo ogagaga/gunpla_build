@@ -5,3 +5,12 @@
 .makingtoolsSection__appMain
   .makingtoolsSection__link
     = link_to '新規登録', new_member_page_making_tool_path
+
+  - @making_tools.each do |making_tool|
+    .makingToolPanel__headerTitle
+      = making_tool.name
+      = making_tool.price
+      = making_tool.affiliate_amazon_link
+      = image_tag making_tool.image.to_s, width: "150"
+      = making_tool.note
+      = making_tool.making_tool_category.name

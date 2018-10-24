@@ -19,8 +19,13 @@ ja:
         remember_me: "ログインを記憶"
         reset_password_token:
         unlock_token:
+      making_tool:
+        name: "製作道具名"
+        price: "価格"
     models:
       user: "ユーザ"
+      making_tool: "製作道具"
+      making_tool_category: "製作道具カテゴリー"
   devise:
     confirmations:
       confirmed: "アカウントを登録しました。"
