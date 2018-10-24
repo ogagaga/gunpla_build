@@ -3,4 +3,3 @@ FactoryBot.define do
     name { 'AB12345678CD' }
   end
 end
-
