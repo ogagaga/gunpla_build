@@ -17,6 +17,13 @@ class MemberPage::MakingToolsController < MemberPage::ApplicationController
     flash.now[:alert] = t('.alert')
     render :new
   end
+
+  def edit
+  end
+
+  def update
+  end
+
   private
 
   def making_tool_params
