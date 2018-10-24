@@ -1,18 +1,30 @@
-describe '個人会員ダッシュボード' do
+describe '製作道具管理、製作道具の登録' do
   let!(:member) { create(:alice) }
+  let!(:making_tool_category) { create(:making_tool_category) }
 
-  context 'アカウントの登録が完了している場合' do
-    before do
-      login_as member
-      visit member_page_root_path
-    end
+  before do
+    login_as member
+    visit member_page_root_path
+  end
 
-    it '製作道具管理画面が表示できる' do
-      sleep 1
-      within '.dashboardSection__appMain' do
-        click_on '製作道具管理'
-      end
-      expect(page).to have_css('.makingtoolsHeader__title' ,text: '製作道具管理')
+  it '製作道具管理画面が表示できる' do
+    within '.dashboardSection__appMain' do
+      click_on '製作道具管理'
     end
+    expect(page).to have_css('.makingtoolsHeader__title' ,text: '製作道具管理')
+  end
+
+  it '製作道具を登録できる' do
+    visit member_page_making_tools_path
+    within '.makingtoolsSection__link' do
+      click_on '新規登録'
+    end
+    expect(page).to have_css('.makingtoolsView__title' ,text: '製作道具を登録します')
+
+    fill_in '製作道具名', with: 'ニッパー'
+    fill_in '価格', with: '300'
+    click_on '登録'
+
+    expect(page).to have_content '道具を追加しました'
   end
 end

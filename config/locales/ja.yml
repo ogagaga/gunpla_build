@@ -1,5 +1,16 @@
 ja:
   common:
+    actions:
+      back: '戻る'
+      register: '登録'
+      edit: '編集'
+      update: '更新'
+      delete: '削除'
+      add: '追加'
+      verify: '認証'
+      save: '保存'
+      cancel: 'キャンセル'
+      input: '入力する'
   devise:
     sessions:
       login: 'ログイン'

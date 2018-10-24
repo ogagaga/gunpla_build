@@ -10,3 +10,10 @@
 User.create(email: 'admin@example.com',   password: 'password')
 User.create(email: 'manager@example.com', password: 'password')
 User.create(email: 'user@example.com',    password: 'password')
+
+MakingToolCategory.create! name: '基本工作の道具'
+MakingToolCategory.create! name: 'スミ入れの道具'
+MakingToolCategory.create! name: '部分塗装の道具'
+MakingToolCategory.create! name: '改造に使う道具'
+MakingToolCategory.create! name: 'その他の道具'
+
