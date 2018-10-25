@@ -19,9 +19,18 @@ class MemberPage::MakingToolsController < MemberPage::ApplicationController
   end
 
   def edit
+    @making_tool = current_member.making_tools.find(params[:id])
   end
 
   def update
+    ApplicationRecord.transaction do
+      @making_tool = current_member.making_tools.find(params[:id])
+      @making_tool.update!(making_tool_params)
+      redirect_to member_page_making_tools_path, notice: t('.notice')
+    end
+  rescue ActiveRecord::RecordInvalid
+    flash.now[:alert] = t('.alert')
+    render :edit
   end
 
   private

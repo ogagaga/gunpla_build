@@ -8,6 +8,7 @@
 
   - @making_tools.each do |making_tool|
     .makingToolPanel__headerTitle
+      = link_to t('common.actions.edit'), [:edit, :member_page, making_tool], class: 'makingtoolPanel__headerLink'
       = making_tool.name
       = making_tool.price
       = making_tool.affiliate_amazon_link
