@@ -1,0 +1,7 @@
+%h1.makingtoolsHeader__title 製作道具管理
+
+.makingtoolsView__title
+  製作道具を編集します
+  = link_to t('common.actions.back'), member_page_making_tools_path, class: 'makingtoolsMenu__return'
+  .makingtoolsSection__appMain
+  = render 'form', making_tool: @making_tool
