@@ -1,6 +1,7 @@
 describe '製作道具管理、製作道具の登録' do
   let!(:member) { create(:alice) }
-  let!(:making_tool_category) { create(:making_tool_category) }
+  let!(:making_tool_category) { create(:basic_tool) }
+  let!(:making_tool) { create(:design_knife, member: member) }
 
   before do
     login_as member
@@ -26,5 +27,8 @@ describe '製作道具管理、製作道具の登録' do
     click_on '登録'
 
     expect(page).to have_content '道具を追加しました'
+  end
+
+  xit '製作道具を編集できる' do
   end
 end
