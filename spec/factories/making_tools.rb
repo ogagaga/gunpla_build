@@ -7,8 +7,7 @@ FactoryBot.define do
       image { nil }
       note { 'ゲート処理に必要です' }
 
-      association :making_tool_category, factory: :basic_tool, name:  { '基本道具' }
+      association :making_tool_category, factory: :basic_tool
     end
   end
 end
-
