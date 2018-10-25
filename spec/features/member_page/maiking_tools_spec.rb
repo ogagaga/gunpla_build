@@ -31,4 +31,7 @@ describe '製作道具管理、製作道具の登録' do
 
   xit '製作道具を編集できる' do
   end
+
+  xit '製作道具を削除できる' do
+  end
 end

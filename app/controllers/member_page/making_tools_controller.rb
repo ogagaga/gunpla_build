@@ -33,6 +33,17 @@ class MemberPage::MakingToolsController < MemberPage::ApplicationController
     render :edit
   end
 
+  def destroy
+    ApplicationRecord.transaction do
+      current_member.making_tools.find(params[:id]).destroy!
+      redirect_to member_page_making_tools_path, notice: t('.notice')
+    end
+  rescue ActiveRecord::RecordInvalid
+    @making_tools = current_member.making_tools
+    flash.now[:alert] = t('.alert')
+    render :index
+  end
+
   private
 
   def making_tool_params
