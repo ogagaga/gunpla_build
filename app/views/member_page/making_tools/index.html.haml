@@ -1,9 +1,10 @@
-%h1.makingtoolsHeader__title 製作道具管理
-
+%h1.makingtoolsHeader__title
+  製作道具管理
 .makingtoolsView__title
   製作道具を管理するためのページです
 .makingtoolsSection__appMain
   .makingtoolsSection__link
+    = link_to t('common.actions.back'), member_page_root_path, class: 'makingtoolsMenu__return'
     = link_to '新規登録', new_member_page_making_tool_path
 
   - @making_tools.each do |making_tool|
