@@ -23,13 +23,15 @@
         #global-navigation.collapse.navbar-collapse
           %ul.nav.navbar-nav.navbar-right
             - if member_signed_in?
-              %li.edit_user_root_link
-                = link_to "ユーザー情報編集", edit_member_registration_path
+              %li.edit_member_registration_link
+                = link_to 'ユーザー情報編集', edit_member_registration_path
             %li
               - if member_signed_in?
-                = link_to "ログアウト", destroy_member_session_path, method: :delete
+                = link_to destroy_member_session_path, method: :delete do
+                  %span.label.label-danger ログアウト
               - else
-                = link_to "ログイン", new_member_session_path
+                = link_to new_member_session_path do
+                  %span.label.label-info ログイン
 
     #content
       .container-fluid
