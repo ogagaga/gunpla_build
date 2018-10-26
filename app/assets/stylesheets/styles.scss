@@ -2,4 +2,34 @@
   padding-top: 50px;
 }
 
+table td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px;
+}
 
+.sidebar-nav {
+  position: fixed;
+  top: 50px;
+  bottom: 0;
+  overflow-y: auto;
+}
+
+.dropdown-header {
+  padding: 5px 15px 3px 8px;
+  font-weight: bold;
+  color: #555555;
+  text-transform: uppercase;
+}
+
+.sidebar-nav {
+  padding: 0;
+  background-color: #f8f8f8;
+}
+
+.nav {
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
