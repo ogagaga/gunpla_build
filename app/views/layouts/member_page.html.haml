@@ -22,24 +22,20 @@
               Members
         #global-navigation.collapse.navbar-collapse
           %ul.nav.navbar-nav.navbar-right
-            %li.edit_user_root_link
-              TODO:ユーザー情報編集のリンク
+            - if member_signed_in?
+              %li.edit_user_root_link
+                = link_to "ユーザー情報編集", edit_member_registration_path
             %li
-              TOTO:sign_outのリンク
+              - if member_signed_in?
+                = link_to "ログアウト", destroy_member_session_path, method: :delete
+              - else
+                = link_to "ログイン", new_member_session_path
+
     #content
       .container-fluid
-        = yield
-      - if member_signed_in?
-        %div
-          Logged in as
-          = succeed "." do
-            %strong= current_member.email
-          = link_to "ログアウト(members)", destroy_member_session_path, method: :delete
-      - else
-        %div
-          = link_to "ログイン(members)", new_member_session_path
+        - if notice
+          %p.alert.alert-notice= notice
+          - if alert
+            %p.alert.alert-error= alert
 
-      - if notice
-        %p.alert.alert-notice= notice
-      - if alert
-        %p.alert.alert-error= alert
+        = yield
