@@ -5,4 +5,5 @@ class MakingTool < ApplicationRecord
   mount_uploader :image, ImagesUploader
 
   validates :name, presence: true
+  validates :making_tool_category_id, presence: true
 end

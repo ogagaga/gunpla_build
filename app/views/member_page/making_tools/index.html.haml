@@ -2,21 +2,32 @@
   .col-sm-2
     = render 'member_page/menu'
   .col-sm-10
-    .makingtoolsHeader__title.h3
-      製作道具管理
-    .makingtoolsView__title
-      製作道具を管理するためのページです
     .makingtoolsSection__appMain
+      .h3 製作道具管理
       .makingtoolsSection__link
-        = link_to '新規登録', new_member_page_making_tool_path
+        = link_to '新規登録', new_member_page_making_tool_path, class: 'btn btn-primary'
 
-      - @making_tools.each do |making_tool|
-        .makingToolPanel__headerTitle
-          = link_to t('common.actions.edit'), [:edit, :member_page, making_tool], class: 'makingtoolPanel__headerLink'
-          = link_to t('common.actions.delete'), [:member_page, making_tool], data: {method: :delete, confirm: '削除しますか?'}, class: 'makingtoolPanel__headerLink'
-          = making_tool.name
-          = making_tool.price
-          = making_tool.affiliate_amazon_link
-          = image_tag making_tool.image.to_s, width: "150"
-          = making_tool.note
-          = making_tool.making_tool_category.name
+      %table.table-condensed.table-striped
+        %thead
+          %tr
+            %th.col-sm-1 ID
+            %th.col-sm-2= t('activerecord.attributes.making_tool.name')
+            %th.col-sm-1= t('activerecord.attributes.making_tool.price')
+            %th.col-sm-2= t('activerecord.attributes.making_tool.affiliate_amazon_link')
+            %th.col-sm-2= t('activerecord.attributes.making_tool.image')
+            %th.col-sm-2= t('activerecord.attributes.making_tool.note')
+            %th.col-sm-2= t('activerecord.attributes.making_tool.making_tool_category')
+            %th.col-sm-1
+        %tbody
+        - @making_tools.each do |making_tool|
+          %tr
+            %td= making_tool.id
+            %td= making_tool.name
+            %td= making_tool.price
+            %td= making_tool.affiliate_amazon_link
+            %td= image_tag making_tool.image.to_s, width: "150"
+            %td= making_tool.note
+            %td= making_tool.making_tool_category.name
+            -# リンクはulタグで挿入する。そしてアイコンにする
+            %td= link_to t('common.actions.edit'), [:edit, :member_page, making_tool], class: 'makingtoolPanel__headerLink'
+            %td= link_to t('common.actions.delete'), [:member_page, making_tool], data: {method: :delete, confirm: '削除しますか?'}, class: 'makingtoolPanel__headerLink'
