@@ -110,3 +110,49 @@ table td {
     max-width: 100%;
     height: auto;
 }
+
+/* Login */
+.signin-form-area {
+  width: 340px;
+  margin: 0 auto;
+}
+
+.form-signin .signin-form-header h1{
+  text-align: center;
+  font-size: 24px;
+  font-weight: 380;
+}
+
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  height: 35px;
+  line-height: 30px;
+}
+
+.signin-form-body {
+  border-top: 1px solid #d8dee2;
+  border-radius: 5px;
+  border: 1px solid #d8dee2;
+  padding: 30px;
+  font-size: 14px;
+  background-color: #fff;
+}
+
+.other-link-area {
+  text-align: center;
+  width: 340px;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 20px;
+  border-top: 1px solid #d8dee2;
+  border-radius: 5px;
+  border: 1px solid #d8dee2;
+  background-color: #f9f9f9;
+}
