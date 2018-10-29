@@ -1,1 +1,107 @@
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
 
+/* Navigation */
+.dropdown-header {
+  padding: 5px 15px 3px 8px;
+  font-weight: bold;
+  color: #555555;
+  text-transform: uppercase;
+}
+
+.nav {
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+/* Sidebar */
+@media screen and (min-width: 768px) {
+  .member_page_body .sidebar-nav {
+    position: fixed;
+    top: 50px;
+    bottom: 0;
+    overflow-y: auto;
+  }
+}
+
+.member_page_body .sidebar-nav {
+  padding: 0;
+  background-color: #f8f8f8;
+}
+
+/* making tools list */
+table td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px;
+}
+
+/* Form */
+@media (min-width: 768px) {
+  .form-horizontal .col-form-label {
+    text-align: right;
+    margin-bottom: 0;
+    padding-top: 7px;
+  }
+}
+
+.makingtoolsSection__appMain {
+  margin-top: 15px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+/* form-control width 100%解除 */
+.informationForm__formSection input {
+  width: auto;
+}
+
+.informationForm__formSection.bootstrap-filestyle.input-group input {
+  width: auto;
+}
+
+.informationForm__formSection textarea {
+  width: auto;
+}
+
+.informationForm__formSection select {
+  width: auto;
+}
+
+.informationForm__formSection .input-group .form-control {
+  margin-left: 15px;
+  position: relative;
+  z-index: 2;
+  float: left;
+  width: auto;
+  margin-bottom: 0;
+}
+
+.group-span-filestyle.input-group-btn {
+  display: inline-grid;
+}
+
+.img-thumbnail {
+    padding: 4px;
+    line-height: 1.428571429;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    display: inline-block;
+    width: 100% \9;
+    max-width: 100%;
+    height: auto;
+}

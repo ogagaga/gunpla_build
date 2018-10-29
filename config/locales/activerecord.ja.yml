@@ -10,8 +10,10 @@ ja:
         affiliate_amazon_link: 'アマゾンアソシエイトURL'
         image: '写真'
         note: '覚え書き'
-        making_tool_category_id: 'カテゴリー'
         making_tool_category: 'カテゴリー'
+        making_tool_category_id: 'カテゴリー'
+      making_tool_category:
+        name: 'カテゴリー'
   errors:
     format: "%{attribute}%{message}"
     messages:

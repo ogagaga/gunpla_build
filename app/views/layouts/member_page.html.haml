@@ -33,12 +33,11 @@
                 = link_to new_member_session_path do
                   %span.label.label-info ログイン
 
-    #content
-      .container-fluid
-        .row
-          - if notice
-            %p.alert.alert-notice= notice
-            - if alert
-              %p.alert.alert-error= alert
+    .container-fluid
+      .row
+        - if notice
+          %p.alert.alert-notice= notice
+          - if alert
+            %p.alert.alert-error= alert
 
-          = yield
+        = yield
