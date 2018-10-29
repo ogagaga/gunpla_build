@@ -32,6 +32,11 @@
   background-color: #f8f8f8;
 }
 
+.nav-stacked > li > a {
+    padding: 6px 15px;
+    border-radius: 0;
+}
+
 /* making tools list */
 table td {
   white-space: nowrap;

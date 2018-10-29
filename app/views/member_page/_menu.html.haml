@@ -5,6 +5,6 @@
       %li.dropdown-header
         %span.dropdown-header Navigation
       %li.dashboardList__item
-        = link_to 'Dashboard', member_page_root_path
+        = active_link_to 'Dashboard', member_page_root_path, wrap_tag: :li, active: :exclusive
       %li.dashboardList__item
-        = link_to '製作道具管理', member_page_making_tools_path
+        = active_link_to '製作道具管理', member_page_making_tools_path, wrap_tag: :li, active: :inclusive

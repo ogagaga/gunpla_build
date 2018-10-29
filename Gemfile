@@ -6,6 +6,7 @@ ruby '2.5.1'
 
 gem 'action_args'
 gem 'active_decorator'
+gem 'active_link_to'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap-filestyle-rails', '~> 1.2', '>= 1.2.1'
 gem 'bootstrap-sass'
