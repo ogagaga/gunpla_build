@@ -1,6 +1,6 @@
 describe '製作道具管理、製作道具の登録' do
   let!(:member) { create(:alice) }
-  let!(:making_tool_category) { create(:basic_tool) }
+  # let!(:making_tool_category) { create(:basic_tool) }
   let!(:making_tool) { create(:design_knife, member: member) }
 
   before do
@@ -24,6 +24,7 @@ describe '製作道具管理、製作道具の登録' do
 
     fill_in '製作道具名', with: 'ニッパー'
     fill_in '価格', with: '300'
+    select '基本工作の道具', from: 'making_tool[making_tool_category_id]'
     click_on '登録'
 
     expect(page).to have_content '道具を追加しました'
