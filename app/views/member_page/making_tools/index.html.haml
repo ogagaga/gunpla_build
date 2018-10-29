@@ -40,3 +40,5 @@
               %li
                 =  link_to [:member_page, making_tool], data: {method: :delete, confirm: '削除しますか?'}, class: 'delete_making_tool_link' do
                   %i.fa.fa-trash
+
+    = paginate @making_tools
