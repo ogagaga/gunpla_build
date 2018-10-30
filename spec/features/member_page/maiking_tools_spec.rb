@@ -35,7 +35,7 @@ describe '製作道具管理、製作道具の登録' do
   it '製作道具を編集できる' do
     click_on '製作道具管理'
 
-    find(".edit_making_tool_link").click
+    find('.edit_making_tool_link').click
 
     expect(page).to have_css('.makingtoolsView__title' ,text: '製作道具を更新します')
 
@@ -51,7 +51,7 @@ describe '製作道具管理、製作道具の登録' do
     click_on '製作道具管理'
 
     page.accept_confirm '削除しますか?' do
-      find(".delete_making_tool_link").click
+      find('.delete_making_tool_link').click
     end
 
     expect(page).to have_content '道具を削除しました'
