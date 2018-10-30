@@ -1,7 +1,9 @@
-%h1.dashboardHeader__title Dashboard
-
-.dashboardView__title
-  ガンプラ製作道具、完成品、製作過程を管理するページ
-.dashboardSection__appMain
-  = link_to '製作道具管理', member_page_making_tools_path, class: "btn btn-sm"
-
+.col-sm-3.col-md-2.sidebar-nav
+  = render 'member_page/menu'
+.col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2
+  .dashboardHeaderSection__appMain
+    .dashboardHeader__title.h3 Dashboard
+    .dashboardView__title
+      ガンプラ製作道具、完成品、製作過程を管理するアプリケーション
+      .dashboardSection__appMain
+        TODO:ダッシュボードの中身は未定

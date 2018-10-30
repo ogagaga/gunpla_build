@@ -1,6 +1,7 @@
 class MemberPage::MakingToolsController < MemberPage::ApplicationController
+  PER_PAGE = 5
   def index
-    @making_tools = current_member.making_tools
+    @making_tools = current_member.making_tools.page(params[:page]).per(PER_PAGE)
   end
 
   def new
@@ -26,7 +27,7 @@ class MemberPage::MakingToolsController < MemberPage::ApplicationController
     ApplicationRecord.transaction do
       @making_tool = current_member.making_tools.find(params[:id])
       @making_tool.update!(making_tool_params)
-      redirect_to member_page_making_tools_path, notice: t('.notice')
+      redirect_to member_page_making_tools_path, notice: '道具を更新しました'
     end
   rescue ActiveRecord::RecordInvalid
     flash.now[:alert] = t('.alert')
@@ -36,7 +37,7 @@ class MemberPage::MakingToolsController < MemberPage::ApplicationController
   def destroy
     ApplicationRecord.transaction do
       current_member.making_tools.find(params[:id]).destroy!
-      redirect_to member_page_making_tools_path, notice: t('.notice')
+      redirect_to member_page_making_tools_path, notice: '道具を削除しました'
     end
   rescue ActiveRecord::RecordInvalid
     @making_tools = current_member.making_tools

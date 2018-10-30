@@ -1,8 +1,11 @@
-%h1.makingtoolsHeader__title 製作道具管理
-
-.makingtoolsView__title
-  製作道具を登録します
-  = link_to t('common.actions.back'), member_page_making_tools_path, class: 'makingtoolsMenu__return'
-  .makingtoolsSection__appMain
-  = render 'form', making_tool: @making_tool
+.dashboardView
+  .col-sm-2.sidebar-nav
+    = render 'member_page/menu'
+  .col-sm-10.col-sm-offset-3.col-md-10.col-md-offset-2
+    .makingtoolsSection__appMain
+      .h3 製作道具管理
+      .makingtoolsView__title
+        製作道具を登録します
+        .makingtoolsSection__appMain
+          = render 'form', making_tool: @making_tool
 

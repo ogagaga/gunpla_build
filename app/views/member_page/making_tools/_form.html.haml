@@ -1,10 +1,14 @@
-= simple_form_for([:member_page, making_tool], html: {class: 'informationForm__form'}) do |f|
+= simple_form_for([:member_page, making_tool], wrapper: :horizontal_form, html: {class: 'form-horizontal'}) do |f|
   .informationForm__formBody
     .informationForm__formSection
       = f.input :name
       = f.input :price
-      = f.input :affiliate_amazon_link
-      = f.file_field :image
-      = f.input :note
-      = f.collection_select :making_tool_category_id, MakingToolCategory.all, :id, :name
-      = f.button :submit, t('common.actions.register')
+      = f.input :affiliate_amazon_link, input_html:{ style: 'width:400px;'}
+      .form-group.row
+        %label.col-sm-3.col-form-label 製作道具の写真
+        = f.file_field :image, as: :file, class: 'filestyle', 'data-buttonText': "画像の選択"
+      = f.input :note, input_html:{ style: 'width:400px;'}
+      = f.association :making_tool_category
+      .form_actions
+        .col-sm-offset-3.col-sm-9s
+          = f.button :submit, t('common.actions.register'), class: 'btn btn-primary'
