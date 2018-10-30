@@ -9,9 +9,11 @@ describe '製作道具管理、製作道具の登録' do
   end
 
   it '製作道具管理画面が表示できる' do
-    within '.dashboardSection__appMain' do
+    expect(page).to have_css('.making-tools-sidebar-link' ,text: '製作道具管理')
+
+    # within '.making-tools-sidebar-link' do
       click_on '製作道具管理'
-    end
+    # end
     expect(page).to have_css('.makingtoolsHeader__title' ,text: '製作道具管理')
   end
 
@@ -30,9 +32,28 @@ describe '製作道具管理、製作道具の登録' do
     expect(page).to have_content '道具を追加しました'
   end
 
-  xit '製作道具を編集できる' do
+  it '製作道具を編集できる' do
+    click_on '製作道具管理'
+
+    find(".edit_making_tool_link").click
+
+    expect(page).to have_css('.makingtoolsView__title' ,text: '製作道具を更新します')
+
+    fill_in '製作道具名', with: 'ニッパー'
+    fill_in '価格', with: '300'
+    select '基本工作の道具', from: 'making_tool[making_tool_category_id]'
+    click_on '登録'
+
+    expect(page).to have_content '道具を更新しました'
   end
 
-  xit '製作道具を削除できる' do
+  it '製作道具を削除できる' do
+    click_on '製作道具管理'
+
+    page.accept_confirm '削除しますか?' do
+      find(".delete_making_tool_link").click
+    end
+
+    expect(page).to have_content '道具を削除しました'
   end
 end
