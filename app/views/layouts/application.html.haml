@@ -7,33 +7,32 @@
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
-  %body
-    %header
-      %div
-        - if member_signed_in?
-          %div
-            Logged in as
-            = succeed "." do
-              %strong= current_member.email
-            = link_to "ログアウト(members)", destroy_member_session_path, method: :delete
-        - else
-          %div
-            = link_to "ログイン(members)", new_member_session_path
-      %div
-        TODO:usersは開発中だけ表示しておく
-        - if user_signed_in?
-          %div
-            Logged in as
-            = succeed "." do
-              %strong= current_user.email
-            = link_to "ログアウト(users)", destroy_user_session_path, method: :delete
-        - else
-          %div
-            = link_to "ログイン(users)", new_user_session_path
+  %body.content_page_body
+    %nav.navbar.navbar-default.navbar-fixed-top
+      .container-fluid
+        .navbar-header
+          %button.navbar-toggle.collapsed{ type: 'button', :'data-toggle' => "collapse", :'data-target' => "#secondary-navigation" }
+            %span.sr-only
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand{ href: '/' }
+            Gunpla Build
+            %small
+              Portal
+        #global-navigation.collapse.navbar-collapse
+          %ul.nav.navbar-nav.navbar-right
+            - if member_signed_in?
+              %li.edit_member_registration_link
+                = link_to 'ユーザー情報編集', edit_member_registration_path
+            %li
+              - if member_signed_in?
+                = link_to destroy_member_session_path, method: :delete do
+                  %span.label.label-danger ログアウト
+              - else
+                = link_to new_member_session_path do
+                  %span.label.label-info ログイン
 
-    %div
-      - if notice
-        %p.alert.alert-notice= notice
-      - if alert
-        %p.alert.alert-error= alert
-    = yield
+    .container-fluid
+      .row
+        = yield

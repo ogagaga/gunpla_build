@@ -3,6 +3,9 @@
   box-sizing: border-box;
 }
 
+//---------------------------------
+// Members
+//---------------------------------
 /* Navigation */
 .dropdown-header {
   padding: 5px 15px 3px 8px;
@@ -155,4 +158,54 @@ table td {
   border-radius: 5px;
   border: 1px solid #d8dee2;
   background-color: #f9f9f9;
+}
+
+//---------------------------------
+// Public Contents
+//---------------------------------
+.content_page_body {
+  padding-top: 50px;
+}
+
+/* Navigation Bar */
+.content_page_body .navbar-default {
+  background-color: #0269b0;
+  border-color: #e7e7e7;
+}
+
+.content_page_body .navbar-brand {
+  color: #ffffff;
+}
+
+.content_page_body .navbar-default .navbar-nav > li > a {
+  color: #ffffff;
+}
+
+.content_page_body .navbar {
+  border: 0px;
+}
+
+.content_page_body .gbp-submenu-box {
+  /* padding-top: 20px; */
+  width: 100%;
+  background: #282828;
+}
+
+.content_page_body .nav-pills > li > a {
+  border-radius: 0px;
+}
+
+.nav-tabs > li, .nav-pills > li {
+  float:none;
+  display:inline-block;
+  *display:inline; /* ie7 fix */
+  zoom:1; /* hasLayout ie7 trigger */
+}
+
+.nav-tabs, .nav-pills {
+  text-align:center;
+}
+
+.nav > li > a {
+  color: #ffffff;
 }
