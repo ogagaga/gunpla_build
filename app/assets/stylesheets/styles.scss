@@ -2,3 +2,9 @@
 .member_page_body {
   padding-top: 50px;
 }
+
+.navbar-custom .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
+    color: #fff;
+    background-color:#fff;
+    color:#000;
+}

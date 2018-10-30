@@ -195,17 +195,35 @@ table td {
   border-radius: 0px;
 }
 
-.nav-tabs > li, .nav-pills > li {
+.content_page_body .gbp-submenu .nav-tabs > li, .content_page_body .gbp-submenu .nav-pills > li {
   float:none;
   display:inline-block;
   *display:inline; /* ie7 fix */
   zoom:1; /* hasLayout ie7 trigger */
 }
 
-.nav-tabs, .nav-pills {
+.content_page_body .nav-tabs, .content_page_body .nav-pills {
   text-align:center;
 }
 
-.nav > li > a {
+.content_page_body .nav > li > a {
   color: #ffffff;
+}
+
+.nav-tabs > li > a {
+  background-color: #333333; 
+  border-color: #777777;
+  color:#fff;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+  color: #fff;
+  background-color: #666;
+  /* border-radius: 0; */
+  border: 0;
+}
+
+.nav-tabs>li>a:hover {
+  border-color: #000000;
+  background-color: #111111;
 }
