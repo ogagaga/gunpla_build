@@ -167,6 +167,50 @@ table td {
   padding-top: 50px;
 }
 
+html, .content_page_body {
+  height: 100%;
+}
+
+.content_page_body .container-fluid, .row, .column {
+  height: 100%;
+}
+
+.cover-img {
+  height: 100%;
+  display: table;
+  width: 100%;
+  background: url(gundum-wall-paper-02.jpg);
+  background-position: bottom 100px left 0px;
+  background-size:contain;
+}
+
+/* ワイドスクリーン用のCSS */
+@media only screen and (min-width: 1500px) {
+  .cover-img {
+    height: 800px;
+  }
+}
+
+/* タブレット用のCSS */
+@media only screen and (min-width : 768px) and (max-width : 1200px) {
+  .cover-img {
+    height: 500px;
+  }
+}
+
+/* スマホ用のCSS */
+@media only screen and (max-width: 479px) {
+  .cover-img {
+    height: 300px;
+  }
+}
+
+.cover-text {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
 /* Navigation Bar */
 .content_page_body .navbar-default {
   background-color: #0269b0;
