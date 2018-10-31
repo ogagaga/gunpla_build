@@ -1,10 +1,10 @@
 .gbp-submenu-box
   .gbp-submenu-wrap
     %ul.nav.nav-tabs.nav-justified.gbp-submenu
-      %li.active
+      %li
         %a{href: '#'}
           Home
-      %li
+      %li.active
         %a{href: '#'}
           製作道具
       %li
@@ -14,5 +14,21 @@
         %a{href: '#'}
           ユーザー
 .carousel-box
-  カルーセルで何かの画像を表示する
-  http://bootstrap3-guide.com/javascript/carousel.htmlを参考にする
+  .container
+    #carousel-mainContents.carousel.slide{ data: { ride: 'carousel'} }
+      %ol.carousel-indicators
+        %li{ data: { target: 'carousel-mainContents', slide_to: '0' } }
+        %li{ data: { target: 'carousel-mainContents', slide_to: '1' } }
+
+      .carousel-inner
+        .item.active
+          %img{ src: 'slide_01.jpg', alt: '' }
+        .item
+          %img{ src: 'slide_02.jpg', alt: '' }
+        .item
+          %img{ src: 'slide_03.jpg', alt: '' }
+
+      %a.left.carousel-control{ href: '#carousel-mainContents', data: { slide: 'prev' } }
+        %span.glyphicon.glyphicon-chevron-left{ aria: { hiden: 'true'} }
+      %a.right.carousel-control{ href: '#carousel-mainContents', data: { slide: 'next' } }
+        %span.glyphicon.glyphicon-chevron-right{ aria: { hiden: 'true'} }
