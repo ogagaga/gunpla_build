@@ -21,12 +21,9 @@
         %li{ data: { target: 'carousel-mainContents', slide_to: '1' } }
 
       .carousel-inner
-        .item.active
-          %img{ src: 'slide_01.jpg', alt: '' }
-        .item
-          %img{ src: 'slide_02.jpg', alt: '' }
-        .item
-          %img{ src: 'slide_03.jpg', alt: '' }
+        - @carousel_images.each_with_index do | carousel_image, idx |
+          .item{ class: "#{'active' if idx == 0}" }
+            = image_tag carousel_image.image.to_s, alt: ''
 
       %a.left.carousel-control{ href: '#carousel-mainContents', data: { slide: 'prev' } }
         %span.glyphicon.glyphicon-chevron-left{ aria: { hiden: 'true'} }

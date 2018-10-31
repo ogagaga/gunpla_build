@@ -196,7 +196,6 @@ table td {
   border-radius: 0px;
 }
 
-
 .content_page_body .gbp-submenu .nav-tabs > li, .content_page_body .gbp-submenu .nav-pills > li {
   float:none;
   display:inline-block;
@@ -218,7 +217,7 @@ table td {
 
 .content_page_body .nav > li > a:hover {
   color: #000000;
-  background-color: #ffffff;
+  background-color: #bb1e29;
 }
 
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
@@ -238,10 +237,7 @@ table td {
 }
 
 /* カルーセル */
-.carousel-box {
-  margin-top: 5px;
-}
-
-.carousel-box .container {
-  width: 1000px;
+.content_page_body .carousel {
+  width:70%;
+  margin:auto;
 }
