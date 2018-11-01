@@ -3,6 +3,9 @@
   box-sizing: border-box;
 }
 
+//---------------------------------
+// Members
+//---------------------------------
 /* Navigation */
 .dropdown-header {
   padding: 5px 15px 3px 8px;
@@ -155,4 +158,158 @@ table td {
   border-radius: 5px;
   border: 1px solid #d8dee2;
   background-color: #f9f9f9;
+}
+
+//---------------------------------
+// Public Contents
+//---------------------------------
+.content_page_body {
+  padding-top: 50px;
+}
+
+html, .content_page_body {
+  height: 100%;
+}
+
+.content_page_body .container-fluid, .row, .column {
+  height: 100%;
+}
+
+.cover-img {
+  height: 100%;
+  display: table;
+  width: 100%;
+  background: url(gundum-wall-paper-02.jpg);
+  background-position: bottom 100px left 0px;
+  background-size:contain;
+}
+
+/* ワイドスクリーン用のCSS */
+@media only screen and (min-width: 1500px) {
+  .cover-img {
+    height: 800px;
+  }
+}
+
+/* タブレット用のCSS */
+@media only screen and (min-width : 768px) and (max-width : 1200px) {
+  .cover-img {
+    height: 500px;
+  }
+}
+
+/* スマホ用のCSS */
+@media only screen and (max-width: 479px) {
+  .cover-img {
+    height: 300px;
+  }
+}
+
+.cover-text {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+/* Navigation Bar */
+.content_page_body .navbar-default {
+  background-color: #0269b0;
+  border-color: #e7e7e7;
+}
+
+.content_page_body .navbar-brand {
+  color: #ffffff;
+}
+
+.content_page_body .navbar-brand:hover {
+  color: #ffffff;
+}
+
+.content_page_body .navbar-default .navbar-nav > li > a {
+  color: #ffffff;
+}
+
+.content_page_body .navbar {
+  border: 0px;
+}
+
+.content_page_body .gbp-submenu-box {
+  padding-bottom: 1px;
+  width: 100%;
+}
+
+/* sub-menu */
+.content_page_body .nav-pills > li > a {
+  border-radius: 0px;
+}
+
+.content_page_body .gbp-submenu .nav-tabs > li, .content_page_body .gbp-submenu .nav-pills > li {
+  float:none;
+  display:inline-block;
+  *display:inline; /* ie7 fix */
+  zoom:1; /* hasLayout ie7 trigger */
+}
+
+.content_page_body .nav-tabs, .content_page_body .nav-pills {
+  text-align:center;
+}
+
+.content_page_body .nav > li > a {
+  color: #ffffff;
+  border-bottom-color: #333333;
+}
+
+.nav-tabs > li > a {
+  background-color: #333333;
+}
+
+.content_page_body .nav > li > a:hover {
+  color: #000000;
+  background-color: #bb1e29;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+  color: #fff;
+  background-color: #666;
+  border-color: #777777;
+  border-radius: 0;
+}
+
+.nav-tabs.nav-justified > .active > a {
+  border-color: initial;
+  border-color: #666;
+}
+
+.nav-tabs.nav-justified > li > a {
+  margin-right: 0;
+  border-radius: 0;
+  margin-bottom: 0px;
+}
+
+/* カルーセル */
+.content_page_body .carousel {
+  width:70%;
+  margin:auto;
+}
+
+/* footer */
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 50px;
+  background-color: #f5f5f5;
+}
+
+.footer > .container {
+  padding: 18px 15px 0;
+}
+.container .text-muted {
+  margin: 20px 0;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
 }

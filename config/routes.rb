@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root to: 'top#show'
 
+  resources :making_tools, only: %i(index)
+
   devise_for :users
 
   devise_for :members, controllers: {
