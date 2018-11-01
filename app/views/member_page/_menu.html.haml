@@ -8,3 +8,5 @@
         = active_link_to 'Dashboard', member_page_root_path, wrap_tag: :li, active: :exclusive
       %li.dashboardList__item
         = active_link_to '製作道具管理', member_page_making_tools_path, wrap_tag: :li, active: :inclusive, class: 'making-tools-sidebar-link'
+      %li.dashboardList__item
+        = active_link_to 'ガンプラ購入履歴', member_page_gunpla_purchase_histories_path, wrap_tag: :li, active: :inclusive, class: 'gunpla-purchase-histories-sidebar-link'
