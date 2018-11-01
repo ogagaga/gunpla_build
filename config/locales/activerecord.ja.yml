@@ -1,8 +1,9 @@
 ja:
   activerecord:
     models:
-      making_tool: "製作道具"
-      making_tool_category: "製作道具カテゴリー"
+      making_tool: '製作道具'
+      making_tool_category: '製作道具カテゴリー'
+      gunpla_purchase_history: 'ガンプラ購入履歴'
     attributes:
       making_tool:
         name: '製作道具名'
@@ -14,6 +15,15 @@ ja:
         making_tool_category_id: 'カテゴリー'
       making_tool_category:
         name: 'カテゴリー'
+      gunpla_purchase_history:
+        name: 'ガンプラ名'
+        reference_price: '参考価格'
+        price: '購入価格'
+        affiliate_amazon_link: 'アマゾンアソシエイトURL'
+        image: '写真'
+        note: '覚え書き'
+        released_on: '発売日'
+        purchased_on: '購入日'
   errors:
     format: "%{attribute}%{message}"
     messages:
