@@ -1,0 +1,15 @@
+.gbp-submenu-box
+  .gbp-submenu-wrap
+    %ul.nav.nav-tabs.nav-justified.gbp-submenu
+      %li{ class: "#{'active' if current_page?(root_path)}" }
+        %a{ href: root_path }
+          Home
+      %li{ class: "#{'active' if current_page?(making_tools_path)}" }
+        %a{ href: making_tools_path }
+          製作道具
+      %li
+        %a{ href: '#' }
+          購入履歴
+      %li
+        %a{ href: '#' }
+          ユーザー
