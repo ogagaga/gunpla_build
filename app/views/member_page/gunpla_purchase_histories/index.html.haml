@@ -15,7 +15,10 @@
         %tr
           %th.col-sm-1 ID
           %th.col-sm-2= t('activerecord.attributes.gunpla_purchase_history.name')
+          %th.col-sm-1= t('activerecord.attributes.gunpla_purchase_history.reference_price')
           %th.col-sm-1= t('activerecord.attributes.gunpla_purchase_history.price')
+          %th.col-sm-1= t('activerecord.attributes.gunpla_purchase_history.released_on')
+          %th.col-sm-1= t('activerecord.attributes.gunpla_purchase_history.purchased_on')
           %th.col-sm-2= t('activerecord.attributes.gunpla_purchase_history.affiliate_amazon_link')
           %th.col-sm-2= t('activerecord.attributes.gunpla_purchase_history.image')
           %th.col-sm-2= t('activerecord.attributes.gunpla_purchase_history.note')
@@ -25,7 +28,10 @@
         %tr
           %td= gunpla_purchase_history.id
           %td= gunpla_purchase_history.name
+          %td= gunpla_purchase_history.reference_price
           %td= gunpla_purchase_history.price
+          %td= gunpla_purchase_history.released_on
+          %td= gunpla_purchase_history.purchased_on
           %td= gunpla_purchase_history.affiliate_amazon_link
           %td= image_tag gunpla_purchase_history.image.to_s, class: 'img-thumbnail'
           %td= gunpla_purchase_history.note
