@@ -95,6 +95,14 @@ table td {
   margin-bottom: 0;
 }
 
+.informationForm__formSection .form-control-label {
+  text-align: right;
+  width: 24%;
+  float: left;
+  margin-right: 27px;
+  padding-top: 7px;
+}
+
 .group-span-filestyle.input-group-btn {
   display: inline-grid;
 }

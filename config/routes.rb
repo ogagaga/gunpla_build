@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   namespace :member_page, path: 'members' do
     root 'dashboard#show'
     resources :making_tools, only: %i(index new create edit update destroy)
+    resources :gunpla_purchase_histories, only: %i(index new create edit update destroy)
   end
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'

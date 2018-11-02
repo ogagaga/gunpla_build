@@ -1,0 +1,16 @@
+= simple_form_for([:member_page, gunpla_purchase_history], wrapper: :horizontal_form, html: {class: 'form-horizontal'}) do |f|
+  .informationForm__formBody
+    .informationForm__formSection
+      = f.input :name
+      = f.input :reference_price
+      = f.input :price
+      = f.input :released_on, html5: true
+      = f.input :purchased_on, html5: true
+      = f.input :affiliate_amazon_link, input_html:{ style: 'width:400px;'}
+      .form-group.row
+        %label.col-sm-3.col-form-label ガンプラ箱の写真
+        = f.file_field :image, as: :file, class: 'filestyle', 'data-buttonText': "画像の選択"
+      = f.input :note, input_html:{ style: 'width:400px;'}
+      .form_actions
+        .col-sm-offset-3.col-sm-9s
+          = f.button :submit, t('common.actions.register'), class: 'btn btn-primary'
