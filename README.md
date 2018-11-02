@@ -1,24 +1,43 @@
-# README
+# Gunpla Build
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[![CircleCI](https://circleci.com/gh/ogagaga/gunpla_build.svg?style=svg)](https://circleci.com/gh/ogagaga/gunpla_build)
 
-Things you may want to cover:
+## Description
 
-* Ruby version
+ガンプラ製作に関するデータを管理するアプリケーションです。
+ブログやwikiにまとめるだけでもよかったのですが、自分専用でシンプルにデータ投入して管理できるものが欲しかったので、作ってみることにしました。
 
-* System dependencies
+## Functional Features
 
-* Configuration
+- ガンプラ製作道具データ登録
+- 購入したガンプラデータ登録
+- ガンプラ完成品の写真アップロード
+- 製作過程管理
+- 登録データの公開
 
-* Database creation
+## Requirement
 
-* Database initialization
+- Ruby version
+- Ruby on Rails
+- Gem
+- Database
 
-* How to run the test suite
+## Installation
 
-* Services (job queues, cache servers, search engines, etc.)
+- TODO:完成したら書く
 
-* Deployment instructions
+- Database initialization
+- How to run the test suite
 
-* ...
+## Usage
+
+- TODO:完成したら書く
+
+## Author
+
+Copyright © 2018 y_ogagaga.
+
+## License
+
+
+
