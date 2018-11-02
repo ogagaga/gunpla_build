@@ -1,6 +1,6 @@
 # Gunpla Build
 
-[![CircleCI]()]()
+[![CircleCI](https://circleci.com/gh/ogagaga/gunpla_build.svg?style=svg)](https://circleci.com/gh/ogagaga/gunpla_build)
 
 ## Description
 
