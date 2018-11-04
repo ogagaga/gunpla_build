@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # for devise sample users
-role = Role.create(name: "")
+role = Role.create(name: 'superadmin')
 role.users.create(email: 'superadmin@example.com',   password: 'password')
 
 User.create(email: 'admin@example.com',   password: 'password')
