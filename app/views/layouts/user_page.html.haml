@@ -16,18 +16,18 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.navbar-brand{ href: '/members/' }
+          %a.navbar-brand{ href: '/admin/' }
             Gunpla Build
             %small
-              Members
+              Admin
         #global-navigation.collapse.navbar-collapse
           %ul.nav.navbar-nav.navbar-right
-            - if member_signed_in?
-              %li.edit_member_registration_link
-                = link_to 'ユーザー情報編集', edit_member_registration_path
+            - if user_signed_in?
+              %li.edit_user_registration_link
+                = link_to 'ユーザー情報編集', edit_user_registration_path
             %li
               - if member_signed_in?
-                = link_to destroy_member_session_path, method: :delete do
+                = link_to destroy_user_session_path, method: :delete do
                   %span.label.label-danger ログアウト
 
     .container-fluid
