@@ -1,0 +1,30 @@
+= render 'shared/menu'
+
+.col-sm-3.col-md-2.sidebar-nav
+  -# TODO:内容未定
+.col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2
+  .gunpla_purchase_historiesSection__appMain
+    .gunpla_purchase_historiesHeader__title.h3 ガンプラ購入履歴
+    -# TODO:デザインをリスト以外にする
+    %table.table.table-condensed.table-striped
+      %thead
+        %tr
+          %th.col-sm-2= t('activerecord.attributes.gunpla_purchase_history.name')
+          %th.col-sm-1= t('activerecord.attributes.gunpla_purchase_history.reference_price')
+          %th.col-sm-1= t('activerecord.attributes.gunpla_purchase_history.price')
+          %th.col-sm-1= t('activerecord.attributes.gunpla_purchase_history.released_on')
+          %th.col-sm-1= t('activerecord.attributes.gunpla_purchase_history.purchased_on')
+          %th.col-sm-2= t('activerecord.attributes.gunpla_purchase_history.image')
+          %th.col-sm-2= t('activerecord.attributes.gunpla_purchase_history.note')
+      %tbody
+      - @gunpla_purchase_histories.each do |gunpla_purchase_history|
+        %tr
+          %td= gunpla_purchase_history.name
+          %td= gunpla_purchase_history.reference_price
+          %td= gunpla_purchase_history.price
+          %td= gunpla_purchase_history.released_on
+          %td= gunpla_purchase_history.purchased_on
+          %td= image_tag gunpla_purchase_history.image.to_s, class: 'img-thumbnail'
+          %td= gunpla_purchase_history.note
+
+    = paginate @gunpla_purchase_histories

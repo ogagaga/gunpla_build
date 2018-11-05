@@ -1,7 +1,7 @@
 = simple_form_for([:member_page, gunpla_purchase_history], wrapper: :horizontal_form, html: {class: 'form-horizontal'}) do |f|
   .informationForm__formBody
     .informationForm__formSection
-      = f.input :name
+      = f.input :name, input_html:{ style: 'width:400px;'}
       = f.input :reference_price
       = f.input :price
       = f.input :released_on, html5: true

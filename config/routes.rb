@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root to: 'top#show'
 
   resources :making_tools, only: %i(index)
+  resources :gunpla_purchase_histories, only: %i(index)
 
   devise_for :users, controllers: {
     confirmations: 'users/confirmations',
