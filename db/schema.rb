@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_01_102012) do
+ActiveRecord::Schema.define(version: 2018_11_05_050537) do
 
   create_table "gunpla_purchase_histories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "member_id", null: false
     t.string "name", null: false
     t.integer "reference_price"
     t.integer "price", null: false
-    t.string "affiliate_amazon_link"
+    t.text "affiliate_amazon_link"
     t.string "image"
     t.text "note"
     t.date "released_on"

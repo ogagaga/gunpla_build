@@ -7,9 +7,9 @@
       %li{ class: "#{'active' if current_page?(making_tools_path)}" }
         %a{ href: making_tools_path }
           製作道具
-      %li
-        %a{ href: '#' }
-          購入履歴
+      %li{ class: "#{'active' if current_page?(gunpla_purchase_histories_path)}" }
+        %a{ href: gunpla_purchase_histories_path }
+          ガンプラ購入履歴
       %li
         %a{ href: '#' }
           ユーザー
