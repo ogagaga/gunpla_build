@@ -3,7 +3,7 @@
     .informationForm__formSection
       = f.input :name, input_html:{ style: 'width:400px;'}
       = f.input :reference_price
-      = f.input :price
+      = f.input :price, input_html: { class: 'input-price' }
       = f.input :released_on, html5: true
       = f.input :purchased_on, html5: true
       = f.input :affiliate_amazon_link, input_html:{ style: 'width:400px;'}
