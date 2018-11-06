@@ -300,6 +300,31 @@ html, .content_page_body {
   margin:auto;
 }
 
+/* 購入履歴メインコンテンツ */
+.gunpla-purchase-items {
+  margin-bottom: 30px;
+  padding-left: 1px;
+}
+
+.gunpla-purchase-item-list {
+  width: 330px;
+  height: 330px;
+  display: inline-block;
+}
+
+.gunpla-purchase-item {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 10px;
+  padding-left: 5px;
+  height: 330px;
+  background-color: #f9f9f9;
+  -webkit-box-shadow: 0 10px 8px -6px #8d8c8c;
+  -moz-box-shadow: 0 10px 8px -6px #8d8c8c;
+  box-shadow: 0 10px 8px -6px #8d8c8c;
+}
+
 /* footer */
 .footer {
   text-align: center;
