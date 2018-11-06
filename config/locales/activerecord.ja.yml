@@ -7,12 +7,15 @@ ja:
     attributes:
       making_tool:
         name: '製作道具名'
+        reference_price: '参考価格'
         price: '価格'
         affiliate_amazon_link: 'アマゾンアソシエイトURL'
         image: '写真'
         note: '覚え書き'
         making_tool_category: 'カテゴリー'
         making_tool_category_id: 'カテゴリー'
+        released_on: '発売日'
+        purchased_on: '購入日'
       making_tool_category:
         name: 'カテゴリー'
       gunpla_purchase_history:

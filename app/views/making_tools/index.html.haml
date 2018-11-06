@@ -9,20 +9,24 @@
     %table.table.table-condensed.table-striped
       %thead
         %tr
-          %th.col-sm-1 ID
           %th.col-sm-2= t('activerecord.attributes.making_tool.name')
-          %th.col-sm-1= t('activerecord.attributes.making_tool.price')
           %th.col-sm-2= t('activerecord.attributes.making_tool.image')
+          %th.col-sm-1= t('activerecord.attributes.making_tool.reference_price')
+          %th.col-sm-1= t('activerecord.attributes.making_tool.price')
+          %th.col-sm-1= t('activerecord.attributes.making_tool.released_on')
+          %th.col-sm-1= t('activerecord.attributes.making_tool.purchased_on')
           %th.col-sm-2= t('activerecord.attributes.making_tool.note')
           %th.col-sm-2= t('activerecord.attributes.making_tool.making_tool_category')
       %tbody
       - @making_tools.each do |making_tool|
         %tr
-          %td= making_tool.id
           %td= making_tool.name
-          %td= making_tool.price
           %td= image_tag making_tool.image.to_s, class: 'img-thumbnail'
+          %td= making_tool.reference_price
+          %td= making_tool.price
           %td= making_tool.note
+          %td= making_tool.released_on
+          %td= making_tool.purchased_on
           %td= making_tool.making_tool_category.name
 
     = paginate @making_tools
