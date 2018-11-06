@@ -1,8 +1,11 @@
 = simple_form_for([:member_page, making_tool], wrapper: :horizontal_form, html: {class: 'form-horizontal'}) do |f|
   .informationForm__formBody
     .informationForm__formSection
-      = f.input :name
-      = f.input :price
+      = f.input :name, input_html:{ style: 'width:400px;'}
+      = f.input :reference_price
+      = f.input :price, input_html: { class: 'input-price' }
+      = f.input :released_on, html5: true
+      = f.input :purchased_on, html5: true
       = f.input :affiliate_amazon_link, input_html:{ style: 'width:400px;'}
       .form-group.row
         %label.col-sm-3.col-form-label 製作道具の写真
