@@ -10,21 +10,21 @@
       %thead
         %tr
           %th.col-sm-2= t('activerecord.attributes.gunpla_purchase_history.name')
+          %th.col-sm-2= t('activerecord.attributes.gunpla_purchase_history.image')
           %th.col-sm-1= t('activerecord.attributes.gunpla_purchase_history.reference_price')
           %th.col-sm-1= t('activerecord.attributes.gunpla_purchase_history.price')
           %th.col-sm-1= t('activerecord.attributes.gunpla_purchase_history.released_on')
           %th.col-sm-1= t('activerecord.attributes.gunpla_purchase_history.purchased_on')
-          %th.col-sm-2= t('activerecord.attributes.gunpla_purchase_history.image')
           %th.col-sm-2= t('activerecord.attributes.gunpla_purchase_history.note')
       %tbody
       - @gunpla_purchase_histories.each do |gunpla_purchase_history|
         %tr
           %td= gunpla_purchase_history.name
+          %td= image_tag gunpla_purchase_history.image.to_s, class: 'img-thumbnail'
           %td= gunpla_purchase_history.reference_price
           %td= gunpla_purchase_history.price
           %td= gunpla_purchase_history.released_on
           %td= gunpla_purchase_history.purchased_on
-          %td= image_tag gunpla_purchase_history.image.to_s, class: 'img-thumbnail'
           %td= gunpla_purchase_history.note
 
     = paginate @gunpla_purchase_histories
