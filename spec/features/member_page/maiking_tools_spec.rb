@@ -23,7 +23,7 @@ describe '製作道具管理、製作道具の登録' do
     expect(page).to have_css('.makingtoolsView__title' ,text: '製作道具を登録します')
 
     fill_in '製作道具名', with: 'ニッパー'
-    find(".input-price").set('300')
+    find('.input-price').set('300')
     select '基本工作の道具', from: 'making_tool[making_tool_category_id]'
     click_on '登録'
 
@@ -38,7 +38,7 @@ describe '製作道具管理、製作道具の登録' do
     expect(page).to have_css('.makingtoolsView__title' ,text: '製作道具を更新します')
 
     fill_in '製作道具名', with: 'ニッパー'
-    find(".input-price").set('300')
+    find('.input-price').set('300')
     select '基本工作の道具', from: 'making_tool[making_tool_category_id]'
     click_on '登録'
 
