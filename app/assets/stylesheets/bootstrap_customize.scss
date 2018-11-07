@@ -185,26 +185,40 @@ body {
   margin-bottom: 50px;
 }
 
+.carousel-box {
+  background-color: #000000;
+}
+
+/* .cover-img { */
+/*   height: 100%; */
+/*   display: table; */
+/*   width: 100%; */
+/*   background: url(gundum-wall-paper-02.jpg); */
+/*   background-position: bottom 100px left 0px; */
+/*   background-size:contain; */
+/*   position: absolute; */
+/*   bottom: 0; */
+/* } */
+
 .cover-img {
-  height: 100%;
-  display: table;
-  width: 100%;
-  background: url(gundum-wall-paper-02.jpg);
-  background-position: bottom 100px left 0px;
-  background-size:contain;
+  height: 0;
+  /* 表示画像の高さ ÷ 表示画像の幅 × 100 */
+  padding-top: 56.25%;
+  background: url(gundum-wall-paper-02.jpg) 0 0 no-repeat;
+  background-size: contain;
 }
 
 /* ワイドスクリーン用のCSS */
 @media only screen and (min-width: 1500px) {
   .cover-img {
-    height: 800px;
+    height: 200px;
   }
 }
 
 /* タブレット用のCSS */
 @media only screen and (min-width : 768px) and (max-width : 1200px) {
   .cover-img {
-    height: 500px;
+    height: 800px;
   }
 }
 
@@ -298,7 +312,7 @@ body {
 
 /* カルーセル */
 .content_page_body .carousel {
-  width:70%;
+  width:40%;
   margin:auto;
 }
 

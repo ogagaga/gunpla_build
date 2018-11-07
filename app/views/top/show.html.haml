@@ -1,19 +1,20 @@
 = render 'shared/menu'
 
+-# .cover-img
+.carousel-box
+  .container
+    #carousel-mainContents.carousel.slide{ data: { ride: 'carousel'} }
+      %ol.carousel-indicators
+        %li{ data: { target: 'carousel-mainContents', slide_to: '0' } }
+        %li{ data: { target: 'carousel-mainContents', slide_to: '1' } }
+
+      .carousel-inner
+        - @carousel_images.each_with_index do | carousel_image, idx |
+          .item{ class: "#{'active' if idx == 0}" }
+            = image_tag carousel_image.image.to_s, alt: ''
+
+      %a.left.carousel-control{ href: '#carousel-mainContents', data: { slide: 'prev' } }
+        %span.glyphicon.glyphicon-chevron-left{ aria: { hiden: 'true'} }
+      %a.right.carousel-control{ href: '#carousel-mainContents', data: { slide: 'next' } }
+        %span.glyphicon.glyphicon-chevron-right{ aria: { hiden: 'true'} }
 .cover-img
-  .carousel-box
-    .container
-      #carousel-mainContents.carousel.slide{ data: { ride: 'carousel'} }
-        %ol.carousel-indicators
-          %li{ data: { target: 'carousel-mainContents', slide_to: '0' } }
-          %li{ data: { target: 'carousel-mainContents', slide_to: '1' } }
-
-        .carousel-inner
-          - @carousel_images.each_with_index do | carousel_image, idx |
-            .item{ class: "#{'active' if idx == 0}" }
-              = image_tag carousel_image.image.to_s, alt: ''
-
-        %a.left.carousel-control{ href: '#carousel-mainContents', data: { slide: 'prev' } }
-          %span.glyphicon.glyphicon-chevron-left{ aria: { hiden: 'true'} }
-        %a.right.carousel-control{ href: '#carousel-mainContents', data: { slide: 'next' } }
-          %span.glyphicon.glyphicon-chevron-right{ aria: { hiden: 'true'} }
