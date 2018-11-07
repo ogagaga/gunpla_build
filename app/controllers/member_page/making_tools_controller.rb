@@ -2,6 +2,7 @@ class MemberPage::MakingToolsController < MemberPage::ApplicationController
   PER_PAGE = 5
   def index
     @making_tools = current_member.making_tools.page(params[:page]).per(PER_PAGE)
+    @total_price = current_member.making_tools.sum(:price)
   end
 
   def new
