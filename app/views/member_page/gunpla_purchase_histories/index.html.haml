@@ -8,8 +8,14 @@
     - if alert
       %p.alert.alert-error= alert
     .gunpla_purchase_historiesSection__link
-      = link_to '新規登録', new_member_page_gunpla_purchase_history_path, class: 'btn btn-primary'
-
+      %ul.list-inline
+        %li
+          = link_to '新規登録', new_member_page_gunpla_purchase_history_path, class: 'btn btn-primary'
+        %li
+          %label
+            合計金額：
+          %span.total_price
+            = number_to_currency(@total_price, format: "%n%u", unit: "円", precision: 0)
     %table.table.table-condensed.table-striped
       %thead
         %tr

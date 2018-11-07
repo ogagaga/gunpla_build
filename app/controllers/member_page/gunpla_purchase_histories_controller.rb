@@ -2,6 +2,7 @@ class MemberPage::GunplaPurchaseHistoriesController < MemberPage::ApplicationCon
   PER_PAGE = 5
   def index
     @gunpla_purchase_histories = current_member.gunpla_purchase_histories.page(params[:page]).per(PER_PAGE)
+    @total_price = GunplaPurchaseHistory.sum(:price)
   end
 
   def new
