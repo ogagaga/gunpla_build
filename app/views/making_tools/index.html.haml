@@ -6,27 +6,14 @@
   .makingtoolsSection__appMain
     .makingtoolsHeader__title.h3 製作道具管理
     -# TODO:デザインをリスト以外にする
-    %table.table.table-condensed.table-striped
-      %thead
-        %tr
-          %th.col-sm-2= t('activerecord.attributes.making_tool.name')
-          %th.col-sm-2= t('activerecord.attributes.making_tool.image')
-          %th.col-sm-1= t('activerecord.attributes.making_tool.reference_price')
-          %th.col-sm-1= t('activerecord.attributes.making_tool.price')
-          %th.col-sm-1= t('activerecord.attributes.making_tool.released_on')
-          %th.col-sm-1= t('activerecord.attributes.making_tool.purchased_on')
-          %th.col-sm-2= t('activerecord.attributes.making_tool.note')
-          %th.col-sm-2= t('activerecord.attributes.making_tool.making_tool_category')
-      %tbody
-      - @making_tools.each do |making_tool|
-        %tr
-          %td= making_tool.name
-          %td= image_tag making_tool.image.to_s, class: 'img-thumbnail'
-          %td= making_tool.reference_price
-          %td= making_tool.price
-          %td= making_tool.note
-          %td= making_tool.released_on
-          %td= making_tool.purchased_on
-          %td= making_tool.making_tool_category.name
+    %ul.gunpla-purchase-items
+      - @making_tools.each do | making_tool |
+        %li.gunpla-purchase-item-list
+          .gunpla-purchase-item
+            = image_tag making_tool.image.to_s, class: 'img-thumbnail'
+            %p= making_tool.name
+            %p="購入価格:#{making_tool.price}円"
+            %p=l making_tool.purchased_on, format: :long if making_tool.purchased_on?
+            %p="メモ:#{making_tool.note}"
 
     = paginate @making_tools
