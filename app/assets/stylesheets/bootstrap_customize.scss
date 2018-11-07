@@ -172,15 +172,17 @@ table td {
 // Public Contents
 //---------------------------------
 .content_page_body {
+  height: 100%;
   padding-top: 50px;
 }
 
-html, .content_page_body {
-  /* height: 100%; */
+html {
+  position: relative;
+  min-height: 100%;
 }
 
-.content_page_body .container-fluid, .row, .column {
-  height: 100%;
+body {
+  margin-bottom: 50px;
 }
 
 .cover-img {
@@ -327,6 +329,9 @@ html, .content_page_body {
 
 /* footer */
 .footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   text-align: center;
   padding-bottom: 10px;
   background: #f5f5f5;
