@@ -21,9 +21,12 @@ default: &default
   host: localhost
 
 development:
+  adapter: mysql2
+  encoding: utf8
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
   password:
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  socket: /tmp/mysql.sock
   database: gunpla_build_development
 
 # Warning: The database defined as "test" will be erased and
