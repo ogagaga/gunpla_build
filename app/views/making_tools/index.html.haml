@@ -10,7 +10,10 @@
       - @making_tools.each do | making_tool |
         %li.gunpla-purchase-item-list
           .gunpla-purchase-item
-            = image_tag making_tool.image.to_s, class: 'img-thumbnail'
+            - if making_tool.image.present?
+              = image_tag making_tool.image.to_s, class: 'img-thumbnail'
+            - else
+              = image_tag 'gunpla-no-image.jpg', class: 'img-thumbnail'
             %p= making_tool.name
             %p="購入価格:#{making_tool.price}円"
             %p=l making_tool.purchased_on, format: :long if making_tool.purchased_on?

@@ -9,7 +9,10 @@
       - @gunpla_purchase_histories.each do |gunpla_purchase_history|
         %li.gunpla-purchase-item-list
           .gunpla-purchase-item
-            = image_tag gunpla_purchase_history.image.to_s, class: 'img-thumbnail'
+            - if gunpla_purchase_history.image.present?
+              = image_tag gunpla_purchase_history.image.to_s, class: 'img-thumbnail'
+            - else
+              = image_tag 'gunpla-no-image.jpg', class: 'img-thumbnail'
             %p= gunpla_purchase_history.name
             %p="購入価格:#{gunpla_purchase_history.price}円"
             %p=l gunpla_purchase_history.purchased_on, format: :long if gunpla_purchase_history.purchased_on?
