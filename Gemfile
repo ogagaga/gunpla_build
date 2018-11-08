@@ -25,7 +25,6 @@ gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'kaminari'
 gem 'momentjs-rails', '>= 2.9.0'
-gem 'pg'
 gem 'puma', '~> 3.11'
 gem 'rails', '~> 5.2.1'
 gem 'rails_admin'
@@ -33,9 +32,14 @@ gem 'sass-rails', '~> 5.0'
 gem 'simple_form'
 gem 'uglifier', '>= 1.3.0'
 
+group: :production do
+  gem 'pg'
+end
+
 group :development do
   gem 'letter_opener'
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'mysql2', '>= 0.4.4', '< 0.6.0'
   gem 'rails-erd'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
@@ -48,6 +52,7 @@ group :test do
   gem 'database_rewinder'
   gem 'factory_bot_rails'
   gem 'launchy'
+  gem 'mysql2', '>= 0.4.4', '< 0.6.0'
   gem 'poltergeist'
   gem 'rspec-rails'
   gem 'rspec_junit_formatter'
