@@ -113,6 +113,7 @@ GEM
       activesupport (>= 3.2)
     erubi (1.7.1)
     erubis (2.7.0)
+    excon (0.62.0)
     execjs (2.7.0)
     factory_bot (4.11.1)
       activesupport (>= 3.0.0)
@@ -122,10 +123,27 @@ GEM
     faker (1.9.1)
       i18n (>= 0.7)
     ffi (1.9.25)
+    fog-aws (3.3.0)
+      fog-core (~> 2.1)
+      fog-json (~> 1.1)
+      fog-xml (~> 0.1)
+      ipaddress (~> 0.8)
+    fog-core (2.1.2)
+      builder
+      excon (~> 0.58)
+      formatador (~> 0.2)
+      mime-types
+    fog-json (1.2.0)
+      fog-core
+      multi_json (~> 1.10)
+    fog-xml (0.1.3)
+      fog-core
+      nokogiri (>= 1.5.11, < 2.0.0)
     font-awesome-rails (4.7.0.4)
       railties (>= 3.2, < 6.0)
     font-awesome-sass (5.4.1)
       sassc (>= 1.11)
+    formatador (0.2.5)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     haml (5.0.4)
@@ -144,6 +162,7 @@ GEM
       ruby_parser (~> 3.5)
     i18n (1.1.0)
       concurrent-ruby (~> 1.0)
+    ipaddress (0.8.3)
     jaro_winkler (1.5.1)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
@@ -391,6 +410,7 @@ DEPENDENCIES
   enumerize
   factory_bot_rails
   faker
+  fog-aws
   font-awesome-sass
   haml-rails
   jbuilder (~> 2.5)
