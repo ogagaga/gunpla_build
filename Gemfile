@@ -48,7 +48,6 @@ group :test do
   gem 'database_rewinder'
   gem 'factory_bot_rails'
   gem 'launchy'
-  gem 'mysql2', '>= 0.4.4', '< 0.6.0'
   gem 'poltergeist'
   gem 'rspec-rails'
   gem 'rspec_junit_formatter'
