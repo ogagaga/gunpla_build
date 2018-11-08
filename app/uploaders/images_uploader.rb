@@ -1,8 +1,7 @@
 class ImagesUploader < CarrierWave::Uploader::Base
-  storage :file
-  # storage :fog
-
   def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+    environment_namespace = ENV.fetch('HEROKU_APP_NAME', Rails.env)
+
+    ['uploads', environment_namespace, model.class.to_s.underscore, mounted_as, model.id].join(File::SEPARATOR)
   end
 end
