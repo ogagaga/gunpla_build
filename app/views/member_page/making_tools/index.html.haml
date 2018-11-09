@@ -15,7 +15,7 @@
           %label
             合計金額：
           %span.total_price
-            = number_to_currency(@total_price, format: "%n%u", unit: "円", precision: 0)
+            = number_to_currency(@total_price, :locale => 'jp')
     %table.table.table-condensed.table-striped
       %thead
         %tr
@@ -36,8 +36,8 @@
           %td= making_tool.id
           %td= making_tool.name
           %td= image_tag making_tool.image.to_s, class: 'img-thumbnail'
-          %td= making_tool.reference_price
-          %td= making_tool.price
+          %td= making_tool.reference_price_jp
+          %td= making_tool.price_jp
           %td= making_tool.released_on
           %td= making_tool.purchased_on
           %td= raw(making_tool.affiliate_amazon_link)

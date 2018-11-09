@@ -2,6 +2,10 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def current_member
+    ActiveDecorator::Decorator.instance.decorate(super)
+  end
+
   def after_sign_in_path_for(resource)
     case resource
     when Member
