@@ -19,13 +19,13 @@
     %table.table.table-condensed.table-striped
       %thead
         %tr
-          %th.col-sm-1 ID
-          %th.col-sm-2= t('activerecord.attributes.gunpla_purchase_history.name')
+          %th.col-sm-1= link_to 'ID', sort: 'id'
+          %th.col-sm-2= link_to t('activerecord.attributes.gunpla_purchase_history.name'), sort: 'name'
           %th.col-sm-2= t('activerecord.attributes.gunpla_purchase_history.image')
-          %th.col-sm-1= t('activerecord.attributes.gunpla_purchase_history.reference_price')
-          %th.col-sm-1= t('activerecord.attributes.gunpla_purchase_history.price')
-          %th.col-sm-1= t('activerecord.attributes.gunpla_purchase_history.released_on')
-          %th.col-sm-1= t('activerecord.attributes.gunpla_purchase_history.purchased_on')
+          %th.col-sm-1= link_to t('activerecord.attributes.gunpla_purchase_history.reference_price'), sort: 'reference_price'
+          %th.col-sm-1= link_to t('activerecord.attributes.gunpla_purchase_history.price'), sort: 'price'
+          %th.col-sm-1= link_to t('activerecord.attributes.gunpla_purchase_history.released_on'), sort: 'released_on'
+          %th.col-sm-1= link_to t('activerecord.attributes.gunpla_purchase_history.purchased_on'), sort: 'purchased_on'
           %th.col-sm-2= t('activerecord.attributes.gunpla_purchase_history.affiliate_amazon_link')
           %th.col-sm-2= t('activerecord.attributes.gunpla_purchase_history.note')
           %th.col-sm-1
@@ -33,8 +33,8 @@
       - @gunpla_purchase_histories.each do | gunpla_purchase_history |
         %tr
           %td= gunpla_purchase_history.id
-          %td= image_tag gunpla_purchase_history.image.to_s, class: 'img-thumbnail'
           %td= gunpla_purchase_history.name
+          %td= image_tag gunpla_purchase_history.image.to_s, class: 'img-thumbnail'
           %td= gunpla_purchase_history.reference_price_jp
           %td= gunpla_purchase_history.price_jp
           %td= gunpla_purchase_history.released_on
