@@ -16,16 +16,16 @@
             合計金額：
           %span.total_price
             = number_to_currency(@total_price, :locale => 'jp')
-    %table.table.table-condensed.table-striped
+    %table.table.table-condensed.table-striped.gunpla_build_admin_table__list
       %thead
         %tr
-          %th.col-sm-1= link_to 'ID', sort: 'id'
-          %th.col-sm-2= link_to t('activerecord.attributes.gunpla_purchase_history.name'), sort: 'name'
+          %th.col-sm-1= sortable 'id', 'ID'
+          %th.col-sm-2= sortable 'name', t('activerecord.attributes.gunpla_purchase_history.name')
           %th.col-sm-2= t('activerecord.attributes.gunpla_purchase_history.image')
-          %th.col-sm-1= link_to t('activerecord.attributes.gunpla_purchase_history.reference_price'), sort: 'reference_price'
-          %th.col-sm-1= link_to t('activerecord.attributes.gunpla_purchase_history.price'), sort: 'price'
-          %th.col-sm-1= link_to t('activerecord.attributes.gunpla_purchase_history.released_on'), sort: 'released_on'
-          %th.col-sm-1= link_to t('activerecord.attributes.gunpla_purchase_history.purchased_on'), sort: 'purchased_on'
+          %th.col-sm-1= sortable 'reference_price', t('activerecord.attributes.gunpla_purchase_history.reference_price')
+          %th.col-sm-1= sortable 'price', t('activerecord.attributes.gunpla_purchase_history.price')
+          %th.col-sm-1= sortable 'released_on', t('activerecord.attributes.gunpla_purchase_history.released_on')
+          %th.col-sm-1= sortable 'purchased_on', t('activerecord.attributes.gunpla_purchase_history.purchased_on')
           %th.col-sm-2= t('activerecord.attributes.gunpla_purchase_history.affiliate_amazon_link')
           %th.col-sm-2= t('activerecord.attributes.gunpla_purchase_history.note')
           %th.col-sm-1
