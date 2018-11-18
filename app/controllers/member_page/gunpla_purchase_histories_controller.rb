@@ -1,7 +1,9 @@
 class MemberPage::GunplaPurchaseHistoriesController < MemberPage::ApplicationController
+  helper_method :sort_column, :sort_direction
   PER_PAGE = 5
+
   def index
-    @gunpla_purchase_histories = current_member.gunpla_purchase_histories.page(params[:page]).per(PER_PAGE)
+    @gunpla_purchase_histories = current_member.gunpla_purchase_histories.order(sort_column + ' ' + sort_direction).page(params[:page]).per(PER_PAGE)
     @total_price = current_member.gunpla_purchase_histories.sum(:price)
   end
 
@@ -59,5 +61,13 @@ class MemberPage::GunplaPurchaseHistoriesController < MemberPage::ApplicationCon
       :released_on,
       :purchased_on,
     )
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ?  params[:direction] : 'asc'
+  end
+
+  def sort_column
+    GunplaPurchaseHistory.column_names.include?(params[:sort]) ? params[:sort] : 'name'
   end
 end

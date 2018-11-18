@@ -16,16 +16,16 @@
             合計金額：
           %span.total_price
             = number_to_currency(@total_price, :locale => 'jp')
-    %table.table.table-condensed.table-striped
+    %table.table.table-condensed.table-striped.gunpla_build_admin_table__list
       %thead
         %tr
-          %th.col-sm-1 ID
-          %th.col-sm-2= t('activerecord.attributes.making_tool.name')
+          %th.col-sm-1= sortable 'id', 'ID'
+          %th.col-sm-2= sortable t('activerecord.attributes.making_tool.name')
           %th.col-sm-2= t('activerecord.attributes.making_tool.image')
-          %th.col-sm-1= t('activerecord.attributes.making_tool.reference_price')
-          %th.col-sm-1= t('activerecord.attributes.making_tool.price')
-          %th.col-sm-1= t('activerecord.attributes.making_tool.released_on')
-          %th.col-sm-1= t('activerecord.attributes.making_tool.purchased_on')
+          %th.col-sm-1= sortable t('activerecord.attributes.making_tool.reference_price')
+          %th.col-sm-1= sortable t('activerecord.attributes.making_tool.price')
+          %th.col-sm-1= sortable t('activerecord.attributes.making_tool.released_on')
+          %th.col-sm-1= sortable t('activerecord.attributes.making_tool.purchased_on')
           %th.col-sm-1= t('activerecord.attributes.making_tool.affiliate_amazon_link')
           %th.col-sm-1= t('activerecord.attributes.making_tool.note')
           %th.col-sm-1= t('activerecord.attributes.making_tool.making_tool_category')

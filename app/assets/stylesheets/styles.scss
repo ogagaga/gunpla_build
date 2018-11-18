@@ -2,3 +2,17 @@
 .member_page_body {
   padding-top: 50px;
 }
+
+/* sort icon */
+.gunpla_build_admin_table__list th .current {
+  padding-right: 12px;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+.gunpla_build_admin_table__list th .asc {
+  background-image: url(up_arrow.gif);
+}
+
+.gunpla_build_admin_table__list th .desc {
+  background-image: url(down_arrow.gif);
+}

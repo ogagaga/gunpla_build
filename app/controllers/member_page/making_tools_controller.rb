@@ -1,5 +1,7 @@
 class MemberPage::MakingToolsController < MemberPage::ApplicationController
+  helper_method :sort_column, :sort_direction
   PER_PAGE = 5
+
   def index
     @making_tools = current_member.making_tools.page(params[:page]).per(PER_PAGE)
     @total_price = current_member.making_tools.sum(:price)
@@ -57,5 +59,15 @@ class MemberPage::MakingToolsController < MemberPage::ApplicationController
       :note,
       :making_tool_category_id
     )
+  end
+
+  # TODO:application_controllerで共通化できないか検討する
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ?  params[:direction] : 'asc'
+  end
+
+  # TODO:application_controllerで共通化できないか検討する
+  def sort_column
+    MakingTool.column_names.include?(params[:sort]) ? params[:sort] : 'name'
   end
 end
