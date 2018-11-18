@@ -63,11 +63,11 @@ class MemberPage::MakingToolsController < MemberPage::ApplicationController
 
   # TODO:application_controllerで共通化できないか検討する
   def sort_direction
-    %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"
+    %w[asc desc].include?(params[:direction]) ?  params[:direction] : 'asc'
   end
 
   # TODO:application_controllerで共通化できないか検討する
   def sort_column
-    MakingTool.column_names.include?(params[:sort]) ? params[:sort] : "name"
+    MakingTool.column_names.include?(params[:sort]) ? params[:sort] : 'name'
   end
 end
