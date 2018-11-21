@@ -1,6 +1,7 @@
 = simple_form_for([:member_page, making_tool], wrapper: :horizontal_form, html: {class: 'form-horizontal'}) do |f|
   .informationForm__formBody
     .informationForm__formSection
+      = f.input :model_number, input_html:{ style: 'width:400px;'}
       = f.input :name, input_html:{ style: 'width:400px;'}
       = f.input :reference_price
       = f.input :price, input_html: { class: 'input-price' }

@@ -52,6 +52,7 @@ class MemberPage::MakingToolsController < MemberPage::ApplicationController
 
   def making_tool_params
     params.require(:making_tool).permit(
+      :model_number,
       :name,
       :price,
       :affiliate_amazon_link,

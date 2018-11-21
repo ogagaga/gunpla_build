@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_06_021234) do
+ActiveRecord::Schema.define(version: 2018_11_21_090534) do
 
   create_table "gunpla_purchase_histories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "member_id", null: false
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 2018_11_06_021234) do
     t.integer "reference_price"
     t.date "released_on"
     t.date "purchased_on"
+    t.string "model_number"
     t.index ["member_id"], name: "index_making_tools_on_member_id"
   end
 
