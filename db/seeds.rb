@@ -27,4 +27,3 @@ Maker.create! name: 'Hasegawa'
 Maker.create! name: 'MINESHIMA'
 Maker.create! name: 'ダイソー'
 Maker.create! name: 'その他'
-
