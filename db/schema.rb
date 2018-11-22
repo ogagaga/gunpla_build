@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_21_090534) do
+ActiveRecord::Schema.define(version: 2018_11_21_143738) do
 
   create_table "gunpla_purchase_histories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "member_id", null: false
@@ -25,6 +25,12 @@ ActiveRecord::Schema.define(version: 2018_11_21_090534) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["member_id"], name: "index_gunpla_purchase_histories_on_member_id"
+  end
+
+  create_table "makers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "making_tool_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -47,6 +53,7 @@ ActiveRecord::Schema.define(version: 2018_11_21_090534) do
     t.date "released_on"
     t.date "purchased_on"
     t.string "model_number"
+    t.integer "maker_id", null: false
     t.index ["member_id"], name: "index_making_tools_on_member_id"
   end
 

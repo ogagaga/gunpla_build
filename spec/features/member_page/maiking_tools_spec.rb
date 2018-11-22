@@ -25,6 +25,7 @@ describe '製作道具管理、製作道具の登録' do
     fill_in '製作道具名', with: 'ニッパー'
     find('.input-price').set('300')
     select '基本工作の道具', from: 'making_tool[making_tool_category_id]'
+    select 'TAMIYA', from: 'making_tool[maker_id]'
     click_on '登録'
 
     expect(page).to have_content '道具を追加しました'
@@ -40,6 +41,7 @@ describe '製作道具管理、製作道具の登録' do
     fill_in '製作道具名', with: 'ニッパー'
     find('.input-price').set('300')
     select '基本工作の道具', from: 'making_tool[making_tool_category_id]'
+    select 'TAMIYA', from: 'making_tool[maker_id]'
     click_on '登録'
 
     expect(page).to have_content '道具を更新しました'

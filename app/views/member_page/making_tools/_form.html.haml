@@ -13,6 +13,7 @@
         = f.file_field :image, as: :file, class: 'filestyle', 'data-buttonText': "画像の選択"
       = f.input :note, input_html:{ style: 'width:400px;'}
       = f.association :making_tool_category
+      = f.association :maker
       .form_actions
         .col-sm-offset-3.col-sm-9s
           = f.button :submit, t('common.actions.register'), class: 'btn btn-primary'

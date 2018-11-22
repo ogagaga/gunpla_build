@@ -15,10 +15,14 @@ ja:
         note: '覚え書き'
         making_tool_category: 'カテゴリー'
         making_tool_category_id: 'カテゴリー'
+        maker: 'メーカー'
+        maker_id: 'メーカー'
         released_on: '発売日'
         purchased_on: '購入日'
       making_tool_category:
         name: 'カテゴリー'
+      maker:
+        name: 'メーカー'
       gunpla_purchase_history:
         name: 'ガンプラ名'
         reference_price: '参考価格'
