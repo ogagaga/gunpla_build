@@ -29,6 +29,7 @@ ja:
         price: '購入価格'
         affiliate_amazon_link: 'Amazon AF'
         image: '写真'
+        bandai_product_url: 'バンダイ商品ページ'
         note: '覚え書き'
         released_on: '発売日'
         purchased_on: '購入日'
