@@ -10,6 +10,7 @@
       .form-group.row
         %label.col-sm-3.col-form-label ガンプラ箱の写真
         = f.file_field :image, as: :file, class: 'filestyle', 'data-buttonText': "画像の選択"
+      = f.input :bandai_product_url, input_html:{ style: 'width:400px;'}
       = f.input :note, input_html:{ style: 'width:400px;'}
       .form_actions
         .col-sm-offset-3.col-sm-9s

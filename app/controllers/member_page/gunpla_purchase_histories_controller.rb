@@ -60,6 +60,7 @@ class MemberPage::GunplaPurchaseHistoriesController < MemberPage::ApplicationCon
       :note,
       :released_on,
       :purchased_on,
+      :bandai_product_url
     )
   end
 

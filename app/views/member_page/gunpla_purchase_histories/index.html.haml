@@ -21,11 +21,12 @@
         %tr
           %th.col-sm-1= sortable 'id', 'ID'
           %th.col-sm-2= sortable 'name', t('activerecord.attributes.gunpla_purchase_history.name')
-          %th.col-sm-2= t('activerecord.attributes.gunpla_purchase_history.image')
+          %th.col-sm-1= t('activerecord.attributes.gunpla_purchase_history.image')
           %th.col-sm-1= sortable 'reference_price', t('activerecord.attributes.gunpla_purchase_history.reference_price')
           %th.col-sm-1= sortable 'price', t('activerecord.attributes.gunpla_purchase_history.price')
           %th.col-sm-1= sortable 'released_on', t('activerecord.attributes.gunpla_purchase_history.released_on')
           %th.col-sm-1= sortable 'purchased_on', t('activerecord.attributes.gunpla_purchase_history.purchased_on')
+          %th.col-sm-2= t('activerecord.attributes.gunpla_purchase_history.bandai_product_url')
           %th.col-sm-2= t('activerecord.attributes.gunpla_purchase_history.affiliate_amazon_link')
           %th.col-sm-2= t('activerecord.attributes.gunpla_purchase_history.note')
           %th.col-sm-1
@@ -39,6 +40,7 @@
           %td= gunpla_purchase_history.price_jp
           %td= gunpla_purchase_history.released_on
           %td= gunpla_purchase_history.purchased_on
+          %td= link_to_if(gunpla_purchase_history.bandai_product_url, 'BANDAI公式', gunpla_purchase_history.bandai_product_url) {}
           %td= raw(gunpla_purchase_history.affiliate_amazon_link)
           %td= gunpla_purchase_history.note
           %td.last.links
