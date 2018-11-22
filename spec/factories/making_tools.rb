@@ -8,6 +8,7 @@ FactoryBot.define do
       note { 'ゲート処理に必要です' }
 
       association :making_tool_category, factory: :basic_tool
+      association :maker, factory: :tamiya
     end
   end
 end
