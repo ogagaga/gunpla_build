@@ -19,3 +19,12 @@ MakingToolCategory.create! name: 'スミ入れの道具'
 MakingToolCategory.create! name: '部分塗装の道具'
 MakingToolCategory.create! name: '改造に使う道具'
 MakingToolCategory.create! name: 'その他の道具'
+
+Maker.create! name: 'TAMIYA'
+Maker.create! name: 'WAVE'
+Maker.create! name: 'クレオス'
+Maker.create! name: 'Hasegawa'
+Maker.create! name: 'MINESHIMA'
+Maker.create! name: 'ダイソー'
+Maker.create! name: 'その他'
+

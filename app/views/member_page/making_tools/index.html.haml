@@ -21,6 +21,7 @@
         %tr
           %th.col-sm-1= sortable 'id', 'ID'
           %th.col-sm-2= t('activerecord.attributes.making_tool.model_number')
+          %th.col-sm-1= t('activerecord.attributes.making_tool.maker')
           %th.col-sm-2= sortable t('activerecord.attributes.making_tool.name')
           %th.col-sm-2= t('activerecord.attributes.making_tool.image')
           %th.col-sm-1= sortable t('activerecord.attributes.making_tool.reference_price')
@@ -36,6 +37,7 @@
         %tr
           %td= making_tool.id
           %td= making_tool.model_number
+          %td= making_tool.maker.name
           %td= making_tool.name
           %td= image_tag making_tool.image.to_s, class: 'img-thumbnail'
           %td= making_tool.reference_price_jp

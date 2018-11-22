@@ -58,7 +58,8 @@ class MemberPage::MakingToolsController < MemberPage::ApplicationController
       :affiliate_amazon_link,
       :image,
       :note,
-      :making_tool_category_id
+      :making_tool_category_id,
+      :maker_id
     )
   end
 
