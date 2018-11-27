@@ -1,0 +1,55 @@
+.col-sm-3.col-md-2.sidebar-nav
+  = render 'member_page/menu'
+.col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2
+  .gunplasSection__appMain
+    .gunplasHeader__title.h3 ガンプラ購入履歴
+    - if notice
+      %p.alert.alert-notice= notice
+    - if alert
+      %p.alert.alert-error= alert
+    .gunplasSection__link
+      %ul.list-inline
+        %li
+          = link_to '新規登録', new_member_page_gunpla_path, class: 'btn btn-primary'
+        %li
+          %label
+            合計金額：
+          %span.total_price
+            = number_to_currency(@total_price, :locale => 'jp')
+    %table.table.table-condensed.table-striped.gunpla_build_admin_table__list
+      %thead
+        %tr
+          %th.col-sm-1= sortable 'id', 'ID'
+          %th.col-sm-2= sortable 'name', t('activerecord.attributes.gunpla.name')
+          %th.col-sm-1= t('activerecord.attributes.gunpla.image')
+          %th.col-sm-1= sortable 'reference_price', t('activerecord.attributes.gunpla.reference_price')
+          %th.col-sm-1= sortable 'price', t('activerecord.attributes.gunpla.price')
+          %th.col-sm-1= sortable 'released_on', t('activerecord.attributes.gunpla.released_on')
+          %th.col-sm-1= sortable 'purchased_on', t('activerecord.attributes.gunpla.purchased_on')
+          %th.col-sm-2= t('activerecord.attributes.gunpla.bandai_product_url')
+          %th.col-sm-2= t('activerecord.attributes.gunpla.affiliate_amazon_link')
+          %th.col-sm-2= t('activerecord.attributes.gunpla.note')
+          %th.col-sm-1
+      %tbody
+      - @gunplas.each do | gunpla |
+        %tr
+          %td= gunpla.id
+          %td= gunpla.name
+          %td= image_tag gunpla.image.to_s, class: 'img-thumbnail'
+          %td= gunpla.reference_price_jp
+          %td= gunpla.price_jp
+          %td= gunpla.released_on
+          %td= gunpla.purchased_on
+          %td= link_to_if(gunpla.bandai_product_url, 'BANDAI公式', gunpla.bandai_product_url) {}
+          %td= raw(gunpla.affiliate_amazon_link)
+          %td= gunpla.note
+          %td.last.links
+            %ul.inline.list-inline
+              %li
+                = link_to [:edit, :member_page, gunpla], class: 'edit_making_tool_link' do
+                  %i.fa.fa-cog
+              %li
+                =  link_to [:member_page, gunpla], data: {method: :delete, confirm: '削除しますか?'}, class: 'delete_gunpla_purchase_historiy_link' do
+                  %i.fa.fa-trash
+
+    = paginate @gunplas

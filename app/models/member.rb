@@ -3,5 +3,5 @@ class Member < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :making_tools, dependent: :destroy
-  has_many :gunpla_purchase_histories, dependent: :destroy
+  has_many :gunplas, dependent: :destroy
 end

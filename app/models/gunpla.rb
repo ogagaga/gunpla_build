@@ -1,4 +1,4 @@
-class GunplaPurchaseHistory < ApplicationRecord
+class Gunpla < ApplicationRecord
   belongs_to :member
 
   mount_uploader :image, ImagesUploader
