@@ -1,4 +1,4 @@
-module GunplaPurchaseHistoryDecorator
+module GunplaDecorator
   def reference_price_jp
     number_to_currency(reference_price, :locale => 'jp')
   end

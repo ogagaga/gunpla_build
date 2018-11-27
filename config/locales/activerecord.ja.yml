@@ -3,7 +3,7 @@ ja:
     models:
       making_tool: '製作道具'
       making_tool_category: '製作道具カテゴリー'
-      gunpla_purchase_history: 'ガンプラ購入履歴'
+      gunpla: 'ガンプラ購入履歴'
     attributes:
       making_tool:
         model_number: '品番'
@@ -23,7 +23,7 @@ ja:
         name: 'カテゴリー'
       maker:
         name: 'メーカー'
-      gunpla_purchase_history:
+      gunpla:
         name: 'ガンプラ名'
         reference_price: '参考価格'
         price: '購入価格'

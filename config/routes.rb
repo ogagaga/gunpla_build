@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root to: 'top#show'
 
   resources :making_tools, only: %i(index)
-  resources :gunpla_purchase_histories, only: %i(index)
+  resources :gunplas, only: %i(index)
 
   devise_for :users, controllers: {
     confirmations: 'users/confirmations',
@@ -27,6 +27,6 @@ Rails.application.routes.draw do
   namespace :member_page, path: 'members' do
     root 'dashboard#show'
     resources :making_tools, only: %i(index new create edit update destroy)
-    resources :gunpla_purchase_histories, only: %i(index new create edit update destroy)
+    resources :gunplas, only: %i(index new create edit update destroy)
   end
 end
