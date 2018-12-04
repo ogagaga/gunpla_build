@@ -118,11 +118,11 @@ table td {
 }
 
 .img-thumbnail {
-    padding: 4px;
+    padding: 0px;
     line-height: 1.428571429;
     background-color: #fff;
     border: 1px solid #ddd;
-    border-radius: 4px;
+    border-radius: 0px;
     -webkit-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
@@ -343,12 +343,8 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   margin: 10px;
-  padding-left: 5px;
   height: 330px;
   background-color: #f9f9f9;
-  -webkit-box-shadow: 0 10px 8px -6px #8d8c8c;
-  -moz-box-shadow: 0 10px 8px -6px #8d8c8c;
-  box-shadow: 0 10px 8px -6px #8d8c8c;
 }
 
 /* footer */
