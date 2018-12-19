@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_27_040240) do
+ActiveRecord::Schema.define(version: 2018_12_19_021056) do
 
   create_table "gunplas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "member_id", null: false
@@ -80,6 +80,29 @@ ActiveRecord::Schema.define(version: 2018_11_27_040240) do
     t.index ["reset_password_token"], name: "index_members_on_reset_password_token", unique: true
   end
 
+  create_table "production_processes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "member_id", null: false
+    t.string "title", null: false
+    t.text "summary"
+    t.date "started_on"
+    t.date "ended_on"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["member_id"], name: "index_production_processes_on_member_id"
+  end
+
+  create_table "production_records", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "production_process_id", null: false
+    t.string "title", null: false
+    t.date "production_date"
+    t.date "making_time"
+    t.text "tools"
+    t.text "note"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["production_process_id"], name: "index_production_records_on_production_process_id"
+  end
+
   create_table "roles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -107,4 +130,6 @@ ActiveRecord::Schema.define(version: 2018_11_27_040240) do
 
   add_foreign_key "gunplas", "members"
   add_foreign_key "making_tools", "members"
+  add_foreign_key "production_processes", "members"
+  add_foreign_key "production_records", "production_processes"
 end
