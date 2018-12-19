@@ -28,5 +28,8 @@ Rails.application.routes.draw do
     root 'dashboard#show'
     resources :making_tools, only: %i(index new create edit update destroy)
     resources :gunplas, only: %i(index new create edit update destroy)
+    resources :production_processes, only: %i(index show create update destroy) do
+      resources :comments, only: %i(show create update destroy)
+    end
   end
 end
