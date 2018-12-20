@@ -30,7 +30,7 @@ Rails.application.routes.draw do
     resources :gunplas, only: %i(index new create edit update destroy) do
       # TODO:production_processess indexは必要になったら作る
       resource :production_process, only: %i(new show create update destroy) do
-        resources :production_records, only: %i(show create update destroy)
+        resources :production_records, only: %i(new show create update destroy)
       end
     end
   end
