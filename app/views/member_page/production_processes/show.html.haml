@@ -1,13 +1,22 @@
 .col-sm-3.col-md-2.sidebar-nav
   = render 'member_page/menu'
 .col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2
-  .gunplasSection__appMain
-    .gunplasHeader__title.h3 製作工程
+  .Section__appMain
+    .Header__title.h3 製作工程
     - if notice
       %p.alert.alert-notice= notice
     - if alert
       %p.alert.alert-error= alert
-    .gunplasSection__link
+    .todo-comment
+      %div
+        TODO:選択したガンプラの情報を表示する
+      %div
+        TODO:製作記録を表示する
+      %div
+        TODO:ガンプラ一覧に戻るボタン必要かもしれない
+    .Section__link
       %ul.list-inline
         %li
-          = link_to '新規登録', new_member_page_gunpla_path, class: 'btn btn-primary'
+          = link_to '製作概要を登録する', new_member_page_gunpla_production_process_path, class: 'btn btn-primary'
+        %li
+          = link_to '製作記録を登録する(製作概要があれば表示)', new_member_page_gunpla_production_process_production_record_path, class: 'btn btn-primary'
