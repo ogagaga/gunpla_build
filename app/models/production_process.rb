@@ -1,4 +1,4 @@
 class ProductionProcess < ApplicationRecord
-  belongs_to :member
-  has_many :production_records
+  belongs_to :gunpla
+  has_many: production_records
 end

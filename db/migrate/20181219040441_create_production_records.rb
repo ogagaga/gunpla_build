@@ -6,7 +6,6 @@ class CreateProductionRecords < ActiveRecord::Migration[5.2]
       t.date :production_date
       t.date :making_time
       t.text :tools
-      t.text :note
 
       t.timestamps
     end

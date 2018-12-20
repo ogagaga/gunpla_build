@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_19_021056) do
+ActiveRecord::Schema.define(version: 2018_12_19_040441) do
 
   create_table "gunplas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "member_id", null: false
@@ -81,14 +81,14 @@ ActiveRecord::Schema.define(version: 2018_12_19_021056) do
   end
 
   create_table "production_processes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "member_id", null: false
+    t.bigint "gunpla_id", null: false
     t.string "title", null: false
     t.text "summary"
     t.date "started_on"
     t.date "ended_on"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["member_id"], name: "index_production_processes_on_member_id"
+    t.index ["gunpla_id"], name: "index_production_processes_on_gunpla_id"
   end
 
   create_table "production_records", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -97,7 +97,6 @@ ActiveRecord::Schema.define(version: 2018_12_19_021056) do
     t.date "production_date"
     t.date "making_time"
     t.text "tools"
-    t.text "note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["production_process_id"], name: "index_production_records_on_production_process_id"
@@ -130,6 +129,6 @@ ActiveRecord::Schema.define(version: 2018_12_19_021056) do
 
   add_foreign_key "gunplas", "members"
   add_foreign_key "making_tools", "members"
-  add_foreign_key "production_processes", "members"
+  add_foreign_key "production_processes", "gunplas"
   add_foreign_key "production_records", "production_processes"
 end
