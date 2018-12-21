@@ -7,6 +7,9 @@ class MemberPage::ProductionProcessesController < MemberPage::ApplicationControl
   end
 
   def new
+    @gunpla = current_member.gunplas.find(params[:gunpla_id])
+    @production_process = @gunpla.build_production_process
+    # binding.pry
   end
 
   def create
