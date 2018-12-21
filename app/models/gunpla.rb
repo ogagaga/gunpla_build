@@ -1,6 +1,6 @@
 class Gunpla < ApplicationRecord
   belongs_to :member
-  has_one :production_proces
+  has_one :production_process
 
   mount_uploader :image, ImagesUploader
   validates :name, presence: true

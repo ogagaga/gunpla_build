@@ -3,6 +3,7 @@ class MemberPage::ProductionProcessesController < MemberPage::ApplicationControl
   end
 
   def show
+    @gunpla = current_member.gunplas.find(params[:gunpla_id])
   end
 
   def new

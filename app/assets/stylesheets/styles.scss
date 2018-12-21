@@ -16,3 +16,18 @@
 .gunpla_build_admin_table__list th .desc {
   background-image: url(down_arrow.gif);
 }
+
+.gunpla-production-process-thumbnail {
+  padding: 0px;
+  line-height: 1.428571429;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 0px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  display: inline-block;
+  /* width: ; */
+  max-width: 200px;
+  height: auto;
+}
