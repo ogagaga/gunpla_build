@@ -24,9 +24,20 @@ class MemberPage::ProductionProcessesController < MemberPage::ApplicationControl
   end
 
   def edit
+    @gunpla = current_member.gunplas.find(params[:gunpla_id])
+    @production_process = @gunpla.production_process || @gunpla.build_production_process
   end
 
   def update
+    ApplicationRecord.transaction do
+      @gunpla = current_member.gunplas.find(params[:gunpla_id])
+      @production_process = @gunpla.production_process || @gunpla.build_production_process
+      @production_process.update!((production_process_params))
+      redirect_to [:member_page, @gunpla, :production_process], notice: t('.notice')
+    end
+  rescue ActiveRecord::RecordInvalid
+    flash.now[:alert] = t('.alert')
+    render :edit
   end
 
   def destroy
