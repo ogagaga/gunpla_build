@@ -4,6 +4,7 @@ ja:
       making_tool: '製作道具'
       making_tool_category: '製作道具カテゴリー'
       gunpla: 'ガンプラ購入履歴'
+      production_process: '製作工程'
     attributes:
       making_tool:
         model_number: '品番'
@@ -33,6 +34,11 @@ ja:
         note: '覚え書き'
         released_on: '発売日'
         purchased_on: '購入日'
+      production_process:
+        title: '製作工程の名前'
+        summary: '概要'
+        started_on: '製作開始日'
+        ended_on: '製作完了日'
   errors:
     format: "%{attribute}%{message}"
     messages:
