@@ -13,29 +13,33 @@
         %li
           = image_tag @gunpla.image.to_s, class: 'gunpla-production-process-thumbnail'
     .production-process
-      - if @gunpla.production_process.present?
-        %ul.inline.list-inline
-          %li
-            = @gunpla.production_process.title
-          %li
-            = @gunpla.production_process.summary
-          %li
-            = @gunpla.production_process.started_on
-          %li
-            = @gunpla.production_process.ended_on
-          %li
-            = link_to '製作概要を編集する', edit_member_page_gunpla_production_process_path(@gunpla), class: 'btn btn-primary'
-          %li
-            = link_to '製作概要を削除する', member_page_gunpla_production_process_path(@gunpla), data: {method: :delete, confirm: '削除しますか?'}, class: 'btn btn-danger'
-    .todo-comment
-      %div
-        TODO:ProductionRecordを表示する
-      %div
-        TODO:ガンプラ一覧に戻るボタン必要かもしれない
+      %p
+        製作概要
+        - if @gunpla.production_process.present?
+          %ul.inline.list-inline
+            %li
+              = @gunpla.production_process.title
+            %li
+              = @gunpla.production_process.summary
+            %li
+              = @gunpla.production_process.started_on
+            %li
+              = @gunpla.production_process.ended_on
+            %li
+              = link_to '製作概要を編集する', edit_member_page_gunpla_production_process_path(@gunpla), class: 'btn btn-primary'
+            %li
+              = link_to '製作概要を削除する', member_page_gunpla_production_process_path(@gunpla), data: {method: :delete, confirm: '削除しますか?'}, class: 'btn btn-danger'
+    - if @gunpla.production_process.present?
+      .production-report
+        %p
+          製作記録
     .Section__link
       %ul.list-inline
         - if @gunpla.production_process.blank?
           %li
             = link_to '製作概要を登録する', new_member_page_gunpla_production_process_path(@gunpla), class: 'btn btn-primary'
-        %li
-          = link_to '製作記録を登録する(製作概要があれば表示)', new_member_page_gunpla_production_process_production_record_path, class: 'btn btn-primary'
+            %span
+              製作概要の登録後に製作記録が登録できるようになります。
+        - if @gunpla.production_process.present?
+          %li
+            = link_to '製作記録を登録する', new_member_page_gunpla_production_process_production_record_path, class: 'btn btn-primary'
