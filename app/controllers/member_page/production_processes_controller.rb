@@ -41,6 +41,15 @@ class MemberPage::ProductionProcessesController < MemberPage::ApplicationControl
   end
 
   def destroy
+    ApplicationRecord.transaction do
+      @gunpla = current_member.gunplas.find(params[:gunpla_id])
+      @gunpla.production_process.destroy!
+      redirect_to [:member_page, @gunpla, :production_process], notice: '削除しました'
+    end
+  rescue ActiveRecord::RecordInvalid
+    @gunpla = current_member.gunplas.find(params[:gunpla_id])
+    flash.now[:alert] = t('.alert')
+    render :index
   end
 
   private
