@@ -6,5 +6,14 @@
       = f.input :started_on, html5: true
       = f.input :ended_on, html5: true
       .form_actions
-        .col-sm-offset-3.col-sm-9s
-          = f.button :submit, t('common.actions.register'), class: 'btn btn-primary'
+        %ul.inline.list-inline.col-sm-offset-3.col-sm-9s
+          %li
+            = f.button :submit, t('common.actions.register'), class: 'btn btn-primary'
+          %li
+            = link_to '戻る', [:member_page, gunpla, :production_process], class: 'btn btn-default'
+
+- content_for :script do
+  :javascript
+    $(function() {
+      $('#production_process_summary').froalaEditor();
+    });

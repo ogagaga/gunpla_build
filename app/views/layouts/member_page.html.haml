@@ -34,3 +34,6 @@
       .row
         = yield
     = render 'shared/footer'
+
+    = content_for(:script) if content_for?(:script)
+

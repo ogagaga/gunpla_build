@@ -20,11 +20,13 @@
             %li
               = @gunpla.production_process.title
             %li
-              = @gunpla.production_process.summary
+              -# TODO:sanitizeで許可するタグを決める
+              = sanitize @gunpla.production_process.summary
             %li
               = @gunpla.production_process.started_on
             %li
               = @gunpla.production_process.ended_on
+          %ul.inline.list-inline
             %li
               = link_to '製作概要を編集する', edit_member_page_gunpla_production_process_path(@gunpla), class: 'btn btn-primary'
             %li
