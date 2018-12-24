@@ -1,0 +1,55 @@
+.col-sm-3.col-md-2.sidebar-nav
+  = render 'member_page/menu'
+.col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2
+  .Section__appMain
+    .Header__title.h3
+      ="#{@gunpla.name}の製作工程"
+    - if notice
+      %p.alert.alert-notice= notice
+    - if alert
+      %p.alert.alert-error= alert
+    .gunpla-info
+      %ul.inline.list-inline
+        %li
+          = image_tag @gunpla.image.to_s, class: 'gunpla-production-process-thumbnail'
+    .production-process
+      .panel.panel-default{ style: "margin-top: 30px;" }
+        .panel-heading
+          %h4.panel-title
+            製作概要
+        .panel-body
+          - if @gunpla.production_process.present?
+            %ul.list-inline
+              -# TODO:titleは不要な気がしてきた
+              -#%li.list-group-tem
+                = @gunpla.production_process.title
+              %li.list-group-tem
+                -# TODO:sanitizeで許可するタグを決める
+                = sanitize @gunpla.production_process.summary
+              %li.list-group-tem
+                %span
+                  製作開始日
+                = @gunpla.production_process.started_on
+              %li.list-group-tem
+                %span
+                  製作完了日
+                = @gunpla.production_process.ended_on
+            %ul.list-inline
+              %li.list-group-tem
+                = link_to '製作概要を編集する', edit_member_page_gunpla_production_process_path(@gunpla), class: 'btn btn-default btn-sm'
+              %li.list-group-tem
+                = link_to '製作概要を削除する', member_page_gunpla_production_process_path(@gunpla), data: {method: :delete, confirm: '削除しますか?'}, class: 'btn btn-danger btn-sm'
+          - else
+            = link_to '製作概要を登録する', new_member_page_gunpla_production_process_path(@gunpla), class: 'btn btn-default btn-sm'
+
+    .production-report
+      .panel.panel-default{ style: "margin-top: 30px;" }
+        .panel-heading
+          %h4.panel-title
+            製作記録
+        .panel-body
+          - if @gunpla.production_process.present?
+            = link_to '製作記録を登録する', new_member_page_gunpla_production_process_production_record_path, class: 'btn btn-default btn-sm'
+          - else
+            %span
+              製作概要の登録後に製作記録が登録できるようになります。
