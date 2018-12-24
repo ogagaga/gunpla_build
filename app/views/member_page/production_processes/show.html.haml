@@ -28,7 +28,7 @@
               = @gunpla.production_process.ended_on
           %ul.inline.list-inline
             %li
-              = link_to '製作概要を編集する', edit_member_page_gunpla_production_process_path(@gunpla), class: 'btn btn-primary'
+              = link_to '製作概要を編集する', edit_member_page_gunpla_production_process_path(@gunpla), class: 'btn btn-default'
             %li
               = link_to '製作概要を削除する', member_page_gunpla_production_process_path(@gunpla), data: {method: :delete, confirm: '削除しますか?'}, class: 'btn btn-danger'
     - if @gunpla.production_process.present?
@@ -39,9 +39,9 @@
       %ul.list-inline
         - if @gunpla.production_process.blank?
           %li
-            = link_to '製作概要を登録する', new_member_page_gunpla_production_process_path(@gunpla), class: 'btn btn-primary'
+            = link_to '製作概要を登録する', new_member_page_gunpla_production_process_path(@gunpla), class: 'btn btn-default'
             %span
               製作概要の登録後に製作記録が登録できるようになります。
         - if @gunpla.production_process.present?
           %li
-            = link_to '製作記録を登録する', new_member_page_gunpla_production_process_production_record_path, class: 'btn btn-primary'
+            = link_to '製作記録を登録する', new_member_page_gunpla_production_process_production_record_path, class: 'btn btn-default'
