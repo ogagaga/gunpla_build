@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_19_040441) do
+ActiveRecord::Schema.define(version: 2018_12_25_014045) do
 
   create_table "gunplas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "member_id", null: false
@@ -95,10 +95,11 @@ ActiveRecord::Schema.define(version: 2018_12_19_040441) do
     t.bigint "production_process_id", null: false
     t.string "title", null: false
     t.date "production_date"
-    t.date "making_time"
     t.text "tools"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "making_hour"
+    t.integer "making_minute"
     t.index ["production_process_id"], name: "index_production_records_on_production_process_id"
   end
 
