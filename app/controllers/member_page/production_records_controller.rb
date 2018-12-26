@@ -10,15 +10,16 @@ class MemberPage::ProductionRecordsController < MemberPage::ApplicationControlle
   end
 
   def create
-  #   ApplicationRecord.transaction do
-  #     @gunpla = current_member.gunplas.find(params[:gunpla_id])
-  #     @production_process = @gunpla.build_production_process(production_process_params)
-  #     @production_process.save!
-  #     redirect_to [:member_page, @gunpla, :production_process], notice: t('.notice')
-  #   end
-  # rescue ActiveRecord::RecordInvalid
-  #   flash.now[:alert] = t('.alert')
-  #   render :new
+    ApplicationRecord.transaction do
+      @gunpla = current_member.gunplas.find(params[:gunpla_id])
+      @production_record = @gunpla.production_process.production_records.build(production_record_params)
+
+      @production_record.save!
+      redirect_to [:member_page, @gunpla, :production_process], notice: t('.notice')
+    end
+  rescue ActiveRecord::RecordInvalid
+    flash.now[:alert] = t('.alert')
+    render :new
   end
 
   def edit
@@ -50,14 +51,16 @@ class MemberPage::ProductionRecordsController < MemberPage::ApplicationControlle
   #   render :index
   end
 
-  # private
+  private
 
-  # def production_process_params
-  #   params.require(:production_process).permit(
-  #     :title,
-  #     :summary,
-  #     :started_on,
-  #     :ended_on
-  #   )
-  # end
+  def production_record_params
+    params.require(:production_record).permit(
+      :title,
+      :production_date,
+      :making_hour,
+      :making_minute,
+      :note,
+      :tools
+    )
+  end
 end
