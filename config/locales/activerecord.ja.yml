@@ -42,7 +42,8 @@ ja:
         ended_on: '製作完了日'
       production_record:
         title: '製作記録の名前'
-        tools: '製作記録の概要'
+        note: '製作記録の概要'
+        tools: '利用した製作道具'
         production_date: '製作日'
         making_hour: '製作時間(時間)'
         making_minute: '製作時間(分)'

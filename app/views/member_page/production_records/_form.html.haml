@@ -5,6 +5,7 @@
       = f.input :production_date, html5: true
       = f.input :making_hour, input_html:{ style: 'width:100px;'}
       = f.input :making_minute, input_html:{ style: 'width:100px;'}
+      = f.input :note, input_html:{ style: 'width:400px;'}
       = f.input :tools, input_html:{ style: 'width:400px;'}
       .form_actions
         %ul.inline.list-inline.col-sm-offset-3.col-sm-9s
@@ -17,4 +18,5 @@
   :javascript
     $(function() {
       $('#production_record_tools').froalaEditor();
+      $('#production_record_note').froalaEditor();
     });
