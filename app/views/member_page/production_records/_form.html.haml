@@ -1,5 +1,4 @@
--#= simple_form_for(production_record, url: member_page_gunpla_production_process_production_records_path(gunpla), wrapper: :horizontal_form, html: {class: 'form-horizontal'}) do |f|
-= simple_form_for(production_record, url: [:member_page, gunpla, :production_process, :production_records], wrapper: :horizontal_form, html: {class: 'form-horizontal'}) do |f|
+= simple_form_for(production_record, url: [:member_page, gunpla, :production_process, production_record.persisted? ? :production_record : :production_records], wrapper: :horizontal_form, html: {class: 'form-horizontal'}) do |f|
   .informationForm__formBody
     .informationForm__formSection
       = f.input :title, input_html:{ style: 'width:400px;'}
