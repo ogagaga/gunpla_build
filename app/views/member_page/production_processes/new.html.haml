@@ -1,0 +1,11 @@
+.dashboardView
+  .col-sm-2.sidebar-nav
+    = render 'member_page/menu'
+  .col-sm-10.col-sm-offset-3.col-md-10.col-md-offset-2
+    .Section__appMain
+      .h3
+        ="#{@gunpla.name}の製作工程"
+      .View__title
+        製作概要を登録します
+        .Section__appMain
+          = render 'form', gunpla: @gunpla, production_process: @production_process

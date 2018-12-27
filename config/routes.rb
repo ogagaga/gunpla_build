@@ -27,6 +27,11 @@ Rails.application.routes.draw do
   namespace :member_page, path: 'members' do
     root 'dashboard#show'
     resources :making_tools, only: %i(index new create edit update destroy)
-    resources :gunplas, only: %i(index new create edit update destroy)
+    resources :gunplas, only: %i(index new create edit update destroy) do
+      # TODO:production_processess indexは必要になったら作る
+      resource :production_process, only: %i(new show create edit update destroy) do
+        resources :production_records, only: %i(show new create edit update destroy)
+      end
+    end
   end
 end
