@@ -1,9 +1,5 @@
 class MemberPage::ProductionRecordsController < MemberPage::ApplicationController
 
-  def show
-    # @gunpla = current_member.gunplas.find(params[:gunpla_id])
-  end
-
   def new
     @gunpla = current_member.gunplas.find(params[:gunpla_id])
     @production_record = @gunpla.production_process.production_records.build
@@ -23,8 +19,8 @@ class MemberPage::ProductionRecordsController < MemberPage::ApplicationControlle
   end
 
   def edit
-    # @gunpla = current_member.gunplas.find(params[:gunpla_id])
-    # @production_process = @gunpla.production_process || @gunpla.build_production_process
+    @gunpla = current_member.gunplas.find(params[:gunpla_id])
+    @production_record = @gunpla.production_process.production_records.find(params[:id]) || @gunpla.production_process.production_records.build
   end
 
   def update

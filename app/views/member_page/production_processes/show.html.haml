@@ -49,7 +49,33 @@
             製作記録
         .panel-body
           - if @gunpla.production_process.present?
-            = link_to '製作記録を登録する', new_member_page_gunpla_production_process_production_record_path, class: 'btn btn-default btn-sm'
+            %p
+              = link_to '製作記録を登録する', new_member_page_gunpla_production_process_production_record_path, class: 'btn btn-default btn-sm'
+            - if @gunpla.production_process.production_records.present?
+              %ul.list-group
+                - @gunpla.production_process.production_records.each do | production_record |
+                  %li.list-group-item
+                    .row
+                      .col-md-2
+                        %div
+                          = production_record.title
+                      .col-md-2
+                        %span
+                          製作日：
+                        %span
+                          = production_record.production_date
+                      .col-md-2
+                        %div
+                          = "製作時間：#{production_record.making_hour}時間#{production_record.making_minute}分"
+                      .col-md-3
+                        %div
+                          = raw(production_record.note)
+                      .col-md-3
+                        %div
+                          = raw(production_record.tools)
+                      .col-md-2
+                        .pull-rights
+                          = link_to '編集', edit_member_page_gunpla_production_process_production_record_path(@gunpla, production_record), class: 'btn btn-default btn-xs'
           - else
             %span
               製作概要の登録後に製作記録が登録できるようになります。
