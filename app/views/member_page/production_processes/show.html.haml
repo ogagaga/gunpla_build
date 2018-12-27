@@ -26,11 +26,11 @@
               %li.list-group-tem
                 -# TODO:sanitizeで許可するタグを決める
                 = sanitize @gunpla.production_process.summary
-              %li.list-group-tem
+              %li.list-group-tem{ style: 'vertical-align:top'}
                 %span
                   製作開始日
                 = @gunpla.production_process.started_on
-              %li.list-group-tem
+              %li.list-group-tem{ style: 'vertical-align:top'}
                 %span
                   製作完了日
                 = @gunpla.production_process.ended_on
@@ -73,9 +73,13 @@
                       .col-md-3
                         %div
                           = raw(production_record.tools)
+                  %li.list-group-item
+                    .row
                       .col-md-2
-                        .pull-rights
-                          = link_to '編集', edit_member_page_gunpla_production_process_production_record_path(@gunpla, production_record), class: 'btn btn-default btn-xs'
+                        .pull-left
+                          = link_to '編集する', edit_member_page_gunpla_production_process_production_record_path(@gunpla, production_record), class: 'btn btn-default btn-xs'
+                        .pull-right
+                          = link_to '削除する', member_page_gunpla_production_process_production_record_path(@gunpla, production_record), data: {method: :delete, confirm: '削除しますか?'}, class: 'btn btn-danger btn-xs'
           - else
             %span
               製作概要の登録後に製作記録が登録できるようになります。

@@ -36,15 +36,17 @@ class MemberPage::ProductionRecordsController < MemberPage::ApplicationControlle
   end
 
   def destroy
-  #   ApplicationRecord.transaction do
-  #     @gunpla = current_member.gunplas.find(params[:gunpla_id])
-  #     @gunpla.production_process.destroy!
-  #     redirect_to [:member_page, @gunpla, :production_process], notice: '削除しました'
-  #   end
-  # rescue ActiveRecord::RecordInvalid
-  #   @gunpla = current_member.gunplas.find(params[:gunpla_id])
-  #   flash.now[:alert] = t('.alert')
-  #   render :index
+    ApplicationRecord.transaction do
+      @gunpla = current_member.gunplas.find(params[:gunpla_id])
+      @production_record = @gunpla.production_process.production_records.find(params[:id])
+      @production_record.destroy!
+      redirect_to [:member_page, @gunpla, :production_process], notice: '削除しました'
+    end
+  rescue ActiveRecord::RecordInvalid
+    @gunpla = current_member.gunplas.find(params[:gunpla_id])
+    @production_record = @gunpla.production_process.production_records.find(params[:id])
+    flash.now[:alert] = t('.alert')
+    render :show
   end
 
   private
