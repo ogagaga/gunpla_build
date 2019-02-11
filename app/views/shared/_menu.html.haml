@@ -4,12 +4,9 @@
       %li{ class: "#{'active' if current_page?(root_path)}" }
         %a{ href: root_path }
           Home
+      %li{ class: "#{'active' if current_page?(gunplas_path)}" }
+        %a{ href: gunplas_path }
+          購入ガンプラ
       %li{ class: "#{'active' if current_page?(making_tools_path)}" }
         %a{ href: making_tools_path }
           製作道具
-      %li{ class: "#{'active' if current_page?(gunplas_path)}" }
-        %a{ href: gunplas_path }
-          ガンプラ購入履歴
-      %li
-        %a{ href: '#' }
-          ユーザー
